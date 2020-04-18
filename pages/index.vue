@@ -82,6 +82,30 @@ export default Vue.extend({
     }))
 
     return { projects, services, pages: sites }
+  },
+  mounted(): void {
+    // @ts-ignore
+    if (window.netlifyIdentity) {
+      // @ts-ignore
+      window.netlifyIdentity.on('init', (user: any) => {
+        if (!user) {
+          // @ts-ignore
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/'
+          })
+        }
+      })
+    }
+  },
+  head() {
+    return {
+      script: [
+        {
+          src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
+          defer: true
+        }
+      ]
+    }
   }
 })
 </script>
