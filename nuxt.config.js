@@ -1,3 +1,22 @@
+import path from 'path'
+import glob from 'glob'
+
+const dynamicRoutes = getDynamicPaths({
+  '/projects': 'projects/*.json',
+  '/services': 'services/*.json',
+  '/pages': 'pages/*.json'
+})
+
+function getDynamicPaths(urlFilepathTable) {
+  return [].concat(
+    ...Object.keys(urlFilepathTable).map((url) => {
+      const filepathGlob = urlFilepathTable[url]
+      return glob
+        .sync(filepathGlob, { cwd: 'content' })
+        .map((filepath) => `${url}/${path.basename(filepath, '.json')}`)
+    })
+  )
+}
 export default {
   mode: 'spa',
   /*
@@ -14,7 +33,11 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: {
+      src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
+      defer: true
+    }
   },
   /*
    ** Customize the progress-bar color
@@ -61,5 +84,8 @@ export default {
      ** You can extend webpack config here
      */
     // extend(config, ctx) {}
+  },
+  generate: {
+    routes: dynamicRoutes
   }
 }

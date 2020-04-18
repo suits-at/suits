@@ -4,6 +4,18 @@
   </div>
 </template>
 
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', (user) => {
+    if (!user) {
+      window.netlifyIdentity.on('login', () => {
+        document.location.href = '/admin/'
+      })
+    }
+  })
+}
+</script>
+
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
