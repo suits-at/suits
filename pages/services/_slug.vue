@@ -2,7 +2,7 @@
   <article>
     <p>{{ icon }}</p>
     <h2>{{ title }}</h2>
-    <div>{{ description }}</div>
+    <div v-html="$md.render(description)" />
   </article>
 </template>
 

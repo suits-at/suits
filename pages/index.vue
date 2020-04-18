@@ -88,12 +88,12 @@ export default Vue.extend({
       /\.json$/
     )
 
-    const sites = pagesCTX.keys().map((key: string) => ({
+    const pages = pagesCTX.keys().map((key: string) => ({
       ...pagesCTX(key),
       _path: `/pages/${key.replace('.json', '').replace('./', '')}`
     }))
 
-    return { projects, services, pages: sites }
+    return { projects, services, pages }
   },
   mounted(): void {
     // @ts-ignore
