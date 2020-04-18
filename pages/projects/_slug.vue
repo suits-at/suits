@@ -10,7 +10,7 @@
 <script>
 export default {
   async asyncData({ params }) {
-    return await import('~/content/projects/' + params.slug + '.json')
+    return await import('~/assets/content/projects/' + params.slug + '.json')
   }
 }
 </script>

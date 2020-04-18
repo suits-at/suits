@@ -58,7 +58,11 @@ export default Vue.extend({
   },
   data() {
     // Using webpacks context to gather all files from a folder
-    const projectCTX = require.context('~/content/projects/', false, /\.json$/)
+    const projectCTX = require.context(
+      '~/assets/content/projects/',
+      false,
+      /\.json$/
+    )
 
     const projects = projectCTX.keys().map((key: string) => ({
       ...projectCTX(key),
@@ -66,7 +70,11 @@ export default Vue.extend({
     }))
 
     // Using webpacks context to gather all files from a folder
-    const servicesCTX = require.context('~/content/services/', false, /\.json$/)
+    const servicesCTX = require.context(
+      '~/assets/content/services/',
+      false,
+      /\.json$/
+    )
 
     const services = servicesCTX.keys().map((key: string) => ({
       ...servicesCTX(key),
@@ -74,7 +82,11 @@ export default Vue.extend({
     }))
 
     // Using webpacks context to gather all files from a folder
-    const pagesCTX = require.context('~/content/pages/', false, /\.json$/)
+    const pagesCTX = require.context(
+      '~/assets/content/pages/',
+      false,
+      /\.json$/
+    )
 
     const sites = pagesCTX.keys().map((key: string) => ({
       ...pagesCTX(key),

@@ -9,7 +9,7 @@
 export default {
   components: {},
   async asyncData({ params }) {
-    return await import('~/content/pages/' + params.slug + '.json')
+    return await import('~/assets/content/pages/' + params.slug + '.json')
   }
 }
 </script>
