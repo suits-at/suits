@@ -2,7 +2,7 @@ import path from 'path'
 import glob from 'glob'
 
 const dynamicRoutes = getDynamicPaths({
-  '/projects': 'projects/*.json',
+  '/references': 'references/*.json',
   '/services': 'services/*.json',
   '/pages': 'pages/*.json'
 })

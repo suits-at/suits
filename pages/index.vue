@@ -2,33 +2,23 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">
-        suits
-      </h1>
       <h2 class="subtitle">
-        My breathtaking Nuxt.js project
+        <nuxt-link :to="'/services'" >Services</nuxt-link>
       </h2>
-      <h2>Projects</h2>
       <ul>
-        <li v-for="project in projects" :key="project.date">
-          <nuxt-link :to="project._path">
-            {{ project.title }}
-          </nuxt-link>
-        </li>
-      </ul>
-      <h2>Services</h2>
-      <ul>
-        <li v-for="service in services" :key="service.title">
-          <nuxt-link :to="service._path">
-            {{ service.title }}
-          </nuxt-link>
-        </li>
-      </ul>
-      <h2>Sites</h2>
-      <ul>
-        <li v-for="page in pages" :key="page.title">
+        <li class="subtitle" v-for="page in pages" :key="page.title">
           <nuxt-link :to="page._path">
             {{ page.title }}
+          </nuxt-link>
+        </li>
+      </ul>
+      <h2 class="subtitle">
+        Referenzen
+      </h2>
+      <ul>
+        <li v-for="reference in references" :key="reference.title">
+          <nuxt-link :to="reference._path">
+            {{ reference.title }}
           </nuxt-link>
         </li>
       </ul>
@@ -58,27 +48,15 @@ export default Vue.extend({
   },
   data() {
     // Using webpacks context to gather all files from a folder
-    const projectCTX = require.context(
-      '~/content/projects/',
+    const referencesCTX = require.context(
+      '~/content/references/',
       false,
       /\.json$/
     )
 
-    const projects = projectCTX.keys().map((key: string) => ({
-      ...projectCTX(key),
-      _path: `/projects/${key.replace('.json', '').replace('./', '')}`
-    }))
-
-    // Using webpacks context to gather all files from a folder
-    const servicesCTX = require.context(
-      '~/content/services/',
-      false,
-      /\.json$/
-    )
-
-    const services = servicesCTX.keys().map((key: string) => ({
-      ...servicesCTX(key),
-      _path: `/services/${key.replace('.json', '').replace('./', '')}`
+    const references = referencesCTX.keys().map((key: string) => ({
+      ...referencesCTX(key),
+      _path: `/references/${key.replace('.json', '').replace('./', '')}`
     }))
 
     // Using webpacks context to gather all files from a folder
@@ -93,7 +71,7 @@ export default Vue.extend({
       _path: `/pages/${key.replace('.json', '').replace('./', '')}`
     }))
 
-    return { projects, services, pages }
+    return { references, pages }
   },
   mounted(): void {
     // @ts-ignore
