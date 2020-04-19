@@ -66,7 +66,7 @@ export default Vue.extend({
 
     const projects = projectCTX.keys().map((key: string) => ({
       ...projectCTX(key),
-      _path: `/projects/${key.replace('.json', '').replace('./', '')}`
+      _path: `/assets/projects/${key.replace('.json', '').replace('./', '')}`
     }))
 
     // Using webpacks context to gather all files from a folder
@@ -78,7 +78,7 @@ export default Vue.extend({
 
     const services = servicesCTX.keys().map((key: string) => ({
       ...servicesCTX(key),
-      _path: `/services/${key.replace('.json', '').replace('./', '')}`
+      _path: `/assets/services/${key.replace('.json', '').replace('./', '')}`
     }))
 
     // Using webpacks context to gather all files from a folder
@@ -90,7 +90,7 @@ export default Vue.extend({
 
     const pages = pagesCTX.keys().map((key: string) => ({
       ...pagesCTX(key),
-      _path: `/pages/${key.replace('.json', '').replace('./', '')}`
+      _path: `/assets/pages/${key.replace('.json', '').replace('./', '')}`
     }))
 
     return { projects, services, pages }
