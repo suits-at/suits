@@ -10,7 +10,7 @@
 export default {
   components: {},
   async asyncData({ params }) {
-    return await import('~/assets/content/services/' + params.slug + '.json')
+    return await import('~/content/services/' + params.slug + '.json')
   }
 }
 </script>

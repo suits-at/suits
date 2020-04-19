@@ -59,7 +59,7 @@ export default Vue.extend({
   data() {
     // Using webpacks context to gather all files from a folder
     const projectCTX = require.context(
-      '~/assets/content/projects/',
+      '~/content/projects/',
       false,
       /\.json$/
     )
@@ -71,7 +71,7 @@ export default Vue.extend({
 
     // Using webpacks context to gather all files from a folder
     const servicesCTX = require.context(
-      '~/assets/content/services/',
+      '~/content/services/',
       false,
       /\.json$/
     )
@@ -83,7 +83,7 @@ export default Vue.extend({
 
     // Using webpacks context to gather all files from a folder
     const pagesCTX = require.context(
-      '~/assets/content/pages/',
+      '~/content/pages/',
       false,
       /\.json$/
     )
