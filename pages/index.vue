@@ -59,38 +59,38 @@ export default Vue.extend({
   data() {
     // Using webpacks context to gather all files from a folder
     const projectCTX = require.context(
-      '~/assets/content/projects/',
+      '~/content/projects/',
       false,
       /\.json$/
     )
 
     const projects = projectCTX.keys().map((key: string) => ({
       ...projectCTX(key),
-      _path: `/assets/projects/${key.replace('.json', '').replace('./', '')}`
+      _path: `/projects/${key.replace('.json', '').replace('./', '')}`
     }))
 
     // Using webpacks context to gather all files from a folder
     const servicesCTX = require.context(
-      '~/assets/content/services/',
+      '~/content/services/',
       false,
       /\.json$/
     )
 
     const services = servicesCTX.keys().map((key: string) => ({
       ...servicesCTX(key),
-      _path: `/assets/services/${key.replace('.json', '').replace('./', '')}`
+      _path: `/services/${key.replace('.json', '').replace('./', '')}`
     }))
 
     // Using webpacks context to gather all files from a folder
     const pagesCTX = require.context(
-      '~/assets/content/pages/',
+      '~/content/pages/',
       false,
       /\.json$/
     )
 
     const pages = pagesCTX.keys().map((key: string) => ({
       ...pagesCTX(key),
-      _path: `/assets/pages/${key.replace('.json', '').replace('./', '')}`
+      _path: `/pages/${key.replace('.json', '').replace('./', '')}`
     }))
 
     return { projects, services, pages }
