@@ -82,6 +82,7 @@ export default {
     // extend(config, ctx) {}
   },
   generate: {
-    routes: dynamicRoutes
+    routes: dynamicRoutes,
+    fallback: true
   }
 }
