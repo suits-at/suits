@@ -3,16 +3,6 @@
     <div>
       <logo />
       <h2 class="subtitle">
-        <nuxt-link :to="'/services'" >Services</nuxt-link>
-      </h2>
-      <ul>
-        <li class="subtitle" v-for="page in pages" :key="page.title">
-          <nuxt-link :to="page._path">
-            {{ page.title }}
-          </nuxt-link>
-        </li>
-      </ul>
-      <h2 class="subtitle">
         Referenzen
       </h2>
       <ul>
@@ -22,18 +12,18 @@
           </nuxt-link>
         </li>
       </ul>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
+     <!-- <div class="links">
+        <a href="https://nuxtjs.org/" target="_blank" class="button&#45;&#45;green">
           Documentation
         </a>
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
-          class="button--grey"
+          class="button&#45;&#45;grey"
         >
           GitHub
         </a>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
@@ -108,7 +98,7 @@ export default Vue.extend({
 */
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,54 +1,82 @@
 <template>
-  <div>
-    <nuxt />
-  </div>
+	<div>
+		<header class="flex flex-wrap justify-between">
+			<nuxt-link to="/">
+					<svg class="inline" xmlns="http://www.w3.org/2000/svg" width="192" height="74" viewBox="0 0 767.7 295.8">
+						<style type="text/css">
+							.st1 {
+								fill: #646464;
+							}
+						</style>
+						<rect x="-1776.1" y="-1165.8" class="st1" width="3.4" height="1.7"/>
+						<polygon class="st1" points="425.3 47.4 409.3 47.4 393.4 47.4 381.4 265.6 409.3 295.8 437.3 265.6 "/>
+						<path class="st1"
+									d="M419.4 0.6c-2.4-0.8-17.7-0.8-20.1 0 -3.7 1.1-8.3 5-9.4 8.8 -1.4 5.1 3.4 20.2 3.4 20.2h16 16c0 0 4.8-15.1 3.4-20.2C427.7 5.5 423.1 1.7 419.4 0.6z"/>
+						<path class="st1"
+									d="M123.9 100.7c-9-12.2-20.5-19.9-36.3-19.9 -15.1 0-29.5 11.6-29.5 27.3 0 40.8 95.9 23.7 95.9 104.9 0 48.5-30.2 82.8-79.6 82.8 -33.4 0-57.8-19.3-74.4-47.2l30.5-29.8c6.4 18.6 23.4 35.3 43.6 35.3 19.3 0 31.1-16.4 31.1-35 0-25-23.1-32.1-42-39.5 -31.1-12.8-53.9-28.6-53.9-66.1C9.3 73.4 39.1 41 79.9 41c21.5 0 51.3 10.6 66.1 27L123.9 100.7z"/>
+						<path class="st1"
+									d="M176.4 47.4h47.2v135.4c0 29.8 2.6 71.9 42.7 71.9s42.7-42 42.7-71.9V47.4h47.2v144.7c0 59-25 103.6-89.8 103.6s-89.8-44.6-89.8-103.6V47.4z"/>
+						<path class="st1" d="M553 289.4h-47.2V88.5h-48.8V47.4h144.7v41.1H553V289.4z"/>
+						<path class="st1"
+									d="M737.6 100.7c-9-12.2-20.5-19.9-36.3-19.9 -15.1 0-29.5 11.6-29.5 27.3 0 40.8 95.9 23.7 95.9 104.9 0 48.5-30.2 82.8-79.6 82.8 -33.4 0-57.8-19.3-74.4-47.2l30.5-29.8c6.4 18.6 23.4 35.3 43.6 35.3 19.3 0 31.1-16.4 31.1-35 0-25-23.1-32.1-42-39.5 -31.1-12.8-53.9-28.6-53.9-66.1 0-40.1 29.8-72.5 70.6-72.5 21.5 0 51.3 10.6 66.1 27L737.6 100.7z"/>
+					</svg>
+				</nuxt-link>
+			<div>
+				<nuxt-link to="/services">Services</nuxt-link>
+				<nuxt-link to="/pages/ueber-mich">Über mich</nuxt-link>
+				<nuxt-link to="/pages/kontakt">Kontakt</nuxt-link>
+				<nuxt-link to="/pages/impressum">Impressum</nuxt-link>
+			</div>
+		</header>
+		<nuxt/>
+	</div>
 </template>
 <style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+	html {
+		font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		Roboto, 'Helvetica Neue', Arial, sans-serif;
+		font-size: 16px;
+		word-spacing: 1px;
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		box-sizing: border-box;
+	}
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-}
+	*,
+	*:before,
+	*:after {
+		box-sizing: border-box;
+		margin: 0;
+	}
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
+	.button--green {
+		display: inline-block;
+		border-radius: 4px;
+		border: 1px solid #3b8070;
+		color: #3b8070;
+		text-decoration: none;
+		padding: 10px 30px;
+	}
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
+	.button--green:hover {
+		color: #fff;
+		background-color: #3b8070;
+	}
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
+	.button--grey {
+		display: inline-block;
+		border-radius: 4px;
+		border: 1px solid #35495e;
+		color: #35495e;
+		text-decoration: none;
+		padding: 10px 30px;
+		margin-left: 15px;
+	}
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
+	.button--grey:hover {
+		color: #fff;
+		background-color: #35495e;
+	}
 </style>
