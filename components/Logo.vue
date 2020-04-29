@@ -1,7 +1,7 @@
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" width="768" height="296" viewBox="0 0 767.7 295.8">
     <style type="text/css">
-      .st1{fill:#646464;}
+      .st1 {fill: #646464;}
     </style>
     <rect x="-1776.1" y="-1165.8" class="st1" width="3.4" height="1.7"/>
     <polygon class="st1" points="425.3 47.4 409.3 47.4 393.4 47.4 381.4 265.6 409.3 295.8 437.3 265.6 "/>
