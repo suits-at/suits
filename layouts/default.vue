@@ -1,6 +1,6 @@
 <template>
-	<div>
-		<header class="flex flex-wrap justify-between">
+	<div class="container">
+		<header class="flex flex-wrap justify-between fixed w-full z-10 py-4 top-0 left-0">
 			<nuxt-link to="/">
 					<svg class="inline" xmlns="http://www.w3.org/2000/svg" width="192" height="74" viewBox="0 0 767.7 295.8">
 						<style type="text/css">
@@ -21,11 +21,14 @@
 									d="M737.6 100.7c-9-12.2-20.5-19.9-36.3-19.9 -15.1 0-29.5 11.6-29.5 27.3 0 40.8 95.9 23.7 95.9 104.9 0 48.5-30.2 82.8-79.6 82.8 -33.4 0-57.8-19.3-74.4-47.2l30.5-29.8c6.4 18.6 23.4 35.3 43.6 35.3 19.3 0 31.1-16.4 31.1-35 0-25-23.1-32.1-42-39.5 -31.1-12.8-53.9-28.6-53.9-66.1 0-40.1 29.8-72.5 70.6-72.5 21.5 0 51.3 10.6 66.1 27L737.6 100.7z"/>
 					</svg>
 				</nuxt-link>
-			<div>
+			<div class="hidden sm:block">
 				<nuxt-link to="/services">Services</nuxt-link>
 				<nuxt-link to="/pages/ueber-mich">Über mich</nuxt-link>
 				<nuxt-link to="/pages/kontakt">Kontakt</nuxt-link>
 				<nuxt-link to="/pages/impressum">Impressum</nuxt-link>
+			</div>
+			<div class="block sm:hidden">
+				<p>Menu</p>
 			</div>
 		</header>
 		<nuxt/>
@@ -49,6 +52,11 @@
   *::after {
     box-sizing: border-box;
     margin: 0;
+  }
+
+  header {
+    background: #fefefe;
+    opacity: 0.95;
   }
 
   .button--green {

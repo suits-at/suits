@@ -1,5 +1,5 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="768" height="296" viewBox="0 0 767.7 295.8">
+  <svg xmlns="http://www.w3.org/2000/svg" width="192" height="74" viewBox="0 0 767.7 295.8">
     <style type="text/css">
       .st1 {fill: #646464;}
     </style>

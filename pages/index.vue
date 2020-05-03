@@ -1,7 +1,10 @@
 <template>
-  <div class="container">
-    <div>
+  <div>
+    <div class="main">
       <logo />
+      <div class="more" />
+    </div>
+    <div>
       <h2 class="subtitle">
         Referenzen
       </h2>
@@ -12,18 +15,6 @@
           </nuxt-link>
         </li>
       </ul>
-     <!-- <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button&#45;&#45;green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button&#45;&#45;grey"
-        >
-          GitHub
-        </a>
-      </div>-->
     </div>
   </div>
 </template>
@@ -91,19 +82,33 @@ export default Vue.extend({
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
+/*Sample `apply` at-rules with Tailwind CSS*/
+.main {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
-*/
-.container {
+
+.more {
+  border: inset 3rem;
+  border-bottom-width: 0;
+  border-color: #49a3df transparent transparent;
+  border-top-style: solid;
+  content: '';
+  cursor: pointer;
+  display: block;
+  /*height: 0;*/
+  /*left: 50%;*/
+  /*position: absolute;*/
+  /*transform: translateX(-50%);*/
+  /*width: 0;*/
+}
+/*.container {
   align-items: center;
-  /*min-height: 100vh;*/
+  !*min-height: 100vh;*!
   display: flex;
   justify-content: center;
   margin: 0 auto;
   text-align: center;
-}
+}*/
 
 .title {
   color: #35495e;
