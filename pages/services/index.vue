@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1 class="title">Services</h1>
+    <h1 class="title">//Leistungen</h1>
     <ul>
       <li v-for="service in services" :key="service.title">
         <nuxt-link :to="service._path">

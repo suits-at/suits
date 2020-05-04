@@ -6,7 +6,7 @@
     </div>
     <div>
       <h2 class="subtitle">
-        Referenzen
+        //Referenzen
       </h2>
       <ul>
         <li v-for="reference in references" :key="reference.title">
@@ -109,16 +109,6 @@ export default Vue.extend({
   margin: 0 auto;
   text-align: center;
 }*/
-
-.title {
-  color: #35495e;
-  display: block;
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 100px;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
 
 .subtitle {
   color: #526488;
