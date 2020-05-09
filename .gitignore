@@ -88,6 +88,3 @@ sw.*
 
 # Vim swap files
 *.swp
-
-# npm auth token
-.npmrc
