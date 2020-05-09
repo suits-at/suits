@@ -20,8 +20,8 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import Logo from '~/components/Logo.vue'
+import Vue from 'vue';
+import Logo from '~/components/Logo.vue';
 
 export default Vue.extend({
   components: {
@@ -33,26 +33,26 @@ export default Vue.extend({
       '~/content/references/',
       false,
       /\.json$/
-    )
+    );
 
     const references = referencesCTX.keys().map((key: string) => ({
       ...referencesCTX(key),
       _path: `/references/${key.replace('.json', '').replace('./', '')}`
-    }))
+    }));
 
     // Using webpacks context to gather all files from a folder
     const pagesCTX = require.context(
       '~/content/pages/',
       false,
       /\.json$/
-    )
+    );
 
     const pages = pagesCTX.keys().map((key: string) => ({
       ...pagesCTX(key),
       _path: `/pages/${key.replace('.json', '').replace('./', '')}`
-    }))
+    }));
 
-    return { references, pages }
+    return { references, pages };
   },
   mounted(): void {
     // @ts-ignore
@@ -62,10 +62,10 @@ export default Vue.extend({
         if (!user) {
           // @ts-ignore
           window.netlifyIdentity.on('login', () => {
-            document.location.href = '/admin/'
-          })
+            document.location.href = '/admin/';
+          });
         }
-      })
+      });
     }
   },
   head() {
@@ -76,30 +76,30 @@ export default Vue.extend({
           defer: true
         }
       ]
-    }
+    };
   }
-})
+});
 </script>
 
 <style>
 /*Sample `apply` at-rules with Tailwind CSS*/
 .main {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
+	@apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 
 .more {
-  border: inset 3rem;
-  border-bottom-width: 0;
-  border-color: #49a3df transparent transparent;
-  border-top-style: solid;
-  content: '';
-  cursor: pointer;
-  display: block;
-  /*height: 0;*/
-  /*left: 50%;*/
-  /*position: absolute;*/
-  /*transform: translateX(-50%);*/
-  /*width: 0;*/
+	border: inset 3rem;
+	border-bottom-width: 0;
+	border-color: #49a3df transparent transparent;
+	border-top-style: solid;
+	content: '';
+	cursor: pointer;
+	display: block;
+	/*height: 0;*/
+	/*left: 50%;*/
+	/*position: absolute;*/
+	/*transform: translateX(-50%);*/
+	/*width: 0;*/
 }
 /*.container {
   align-items: center;
@@ -111,14 +111,14 @@ export default Vue.extend({
 }*/
 
 .subtitle {
-  color: #526488;
-  font-size: 42px;
-  font-weight: 300;
-  padding-bottom: 15px;
-  word-spacing: 5px;
+	color: #526488;
+	font-size: 42px;
+	font-weight: 300;
+	padding-bottom: 15px;
+	word-spacing: 5px;
 }
 
 .links {
-  padding-top: 15px;
+	padding-top: 15px;
 }
 </style>

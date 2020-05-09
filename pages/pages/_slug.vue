@@ -1,6 +1,6 @@
 <template>
   <article>
-    <h1 class="title">//{{ title }}</h1>
+    <h1>//{{ title }}</h1>
     <div v-html="$md.render(content)" />
   </article>
 </template>
@@ -9,7 +9,7 @@
 export default {
   components: {},
   async asyncData({ params }) {
-    return await import('~/content/pages/' + params.slug + '.json')
+    return await import('~/content/pages/' + params.slug + '.json');
   }
-}
+};
 </script>
