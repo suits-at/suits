@@ -1,21 +1,21 @@
-import path from 'path'
-import glob from 'glob'
+import path from 'path';
+import glob from 'glob';
 
 const dynamicRoutes = getDynamicPaths({
   '/references': 'references/*.json',
   '/services': 'services/*.json',
   '/pages': 'pages/*.json'
-})
+});
 
 function getDynamicPaths(urlFilepathTable) {
   return [].concat(
     ...Object.keys(urlFilepathTable).map((url) => {
-      const filepathGlob = urlFilepathTable[url]
+      const filepathGlob = urlFilepathTable[url];
       return glob
         .sync(filepathGlob, { cwd: 'content' })
-        .map((filepath) => `${url}/${path.basename(filepath, '.json')}`)
+        .map((filepath) => `${url}/${path.basename(filepath, '.json')}`);
     })
-  )
+  );
 }
 export default {
   mode: 'universal',
@@ -61,11 +61,15 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    '@fortawesome/fontawesome-svg-core/styles.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '~/plugins/fontawesome.ts'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -90,6 +94,9 @@ export default {
   markdownit: {
     injected: true
   },
+  purgeCSS: {
+    whitelistPatterns: [/svg.*/, /fa.*/]
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -108,4 +115,4 @@ export default {
     routes: dynamicRoutes,
     fallback: true
   }
-}
+};
