@@ -4,7 +4,6 @@ import glob from 'glob';
 const dynamicRoutes = getDynamicPaths({
   '/references': 'references/*.json',
   '/services': 'services/*.json',
-  '/pages': 'pages/*.json'
 });
 
 function getDynamicPaths(urlFilepathTable) {

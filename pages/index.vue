@@ -5,7 +5,7 @@
       <div class="more" />
     </div>
     <div>
-      <h2 class="subtitle">
+      <h2 class="subtitle" id="referenzen">
         //Referenzen
       </h2>
       <ul>
@@ -40,19 +40,7 @@ export default Vue.extend({
       _path: `/references/${key.replace('.json', '').replace('./', '')}`
     }));
 
-    // Using webpacks context to gather all files from a folder
-    const pagesCTX = require.context(
-      '~/content/pages/',
-      false,
-      /\.json$/
-    );
-
-    const pages = pagesCTX.keys().map((key: string) => ({
-      ...pagesCTX(key),
-      _path: `/pages/${key.replace('.json', '').replace('./', '')}`
-    }));
-
-    return { references, pages };
+    return { references };
   },
   mounted(): void {
     // @ts-ignore

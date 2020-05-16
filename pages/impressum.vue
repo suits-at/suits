@@ -1,15 +1,15 @@
 <template>
-  <article>
+  <div>
     <h1>//{{ title }}</h1>
     <div v-html="$md.render(content)" />
-  </article>
+  </div>
 </template>
 
 <script>
 export default {
   components: {},
-  async asyncData({ params }) {
-    return await import('~/content/pages/' + params.slug + '.json');
+  async asyncData() {
+    return await import('~/content/impressum.json');
   }
 };
 </script>

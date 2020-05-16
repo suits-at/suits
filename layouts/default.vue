@@ -1,6 +1,23 @@
 <template>
 	<div>
-		<div class="container">
+		<div v-show="menuOpen" class="absolute h-screen w-screen z-50 bg-gray-100 p-4">
+			<p @click="toggleMenu">CLOSE</p>
+			<ul @click="toggleMenu">
+				<li>
+					<nuxt-link to="/#referenzen">Referenzen</nuxt-link>
+				</li>
+				<li>
+					<nuxt-link to="/ueber-mich">Über mich</nuxt-link>
+				</li>
+				<li>
+					<nuxt-link to="/leistungen">Leistungen</nuxt-link>
+				</li>
+				<li>
+					<nuxt-link to="/kontakt">Kontakt</nuxt-link>
+				</li>
+			</ul>
+		</div>
+		<div v-show="!menuOpen" class="container">
 			<header
 				class="flex flex-wrap container justify-between fixed z-10 py-4 top-0"
 			>
@@ -46,22 +63,22 @@
 				</nuxt-link>
 				<template>
 					<div class="hidden sm:block">
-						<nuxt-link to="/pages/ueber-mich">Über mich</nuxt-link>
-						<nuxt-link to="/services">Leistungen</nuxt-link>
-						<nuxt-link to="/pages/kontakt">Kontakt</nuxt-link>
-						<nuxt-link to="/pages/impressum">Impressum</nuxt-link>
+						<nuxt-link to="/#referenzen">Referenzen</nuxt-link>
+						<nuxt-link to="/ueber-mich">Über mich</nuxt-link>
+						<nuxt-link to="/leistungen">Leistungen</nuxt-link>
+						<nuxt-link to="/kontakt">Kontakt</nuxt-link>
 					</div>
 					<div class="block sm:hidden">
-						<p>Menu</p>
+						<p class="p-4" @click="toggleMenu">Menu</p>
 					</div>
 				</template>
 			</header>
 			<nuxt class="pt-24 min-h-screen"/>
 		</div>
-		<footer>
-			<div class="container flex flex-wrap justify-between">
-				<div><a href="mailto:office@suits.at">office@suits.at</a></div>
-				<div>
+		<footer v-show="!menuOpen">
+			<div class="container flex flex-wrap text-center">
+				<a class="w-full sm:w-1/4 py-4" href="mailto:office@suits.at">office@suits.at</a>
+				<div class="w-full flex-1 py-4">
 					<font-awesome-icon :icon="['fab', 'github']" size="2x"/>
 					<font-awesome-icon :icon="['fab', 'medium-m']" size="2x"/>
 					<font-awesome-icon :icon="['fab', 'xing']" size="2x"/>
@@ -69,13 +86,28 @@
 					<font-awesome-icon :icon="['fab', 'stack-overflow']" size="2x"/>
 					<font-awesome-icon :icon="['fab', 'twitter']" size="2x"/>
 				</div>
-				<div>
-					<a href="/impressum">Impressum</a>
-				</div>
+				<a class="w-full sm:w-1/4 py-4" href="/impressum">Impressum</a>
 			</div>
 		</footer>
 	</div>
 </template>
+<script lang="ts">
+  import Vue from 'vue';
+
+  export default Vue.extend({
+    components: {},
+    data() {
+      return {
+        menuOpen: false
+      };
+    },
+    methods: {
+      toggleMenu() {
+        this.menuOpen = !this.menuOpen;
+      }
+    }
+  });
+</script>
 <style>
 	.min-h-screen {
 		min-height: calc((100vh) - 4.1rem);
@@ -144,7 +176,8 @@
 
 	footer {
 		width: 100%;
-		padding: 1rem;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
 		background-color: #2e2e2e;
 		color: #646464;
 	}

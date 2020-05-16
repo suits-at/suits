@@ -4,15 +4,6 @@ backend:
 media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 collections:
-  - name: "pages" # Used in routes, e.g., /admin/collections/blog
-    label: "Pages" # Used entin the UI
-    folder: "content/pages" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    format: 'json'
-    fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Content", name: "content", widget: "markdown"}
   - name: "references" # Used in routes, e.g., /admin/collections/blog
     label: "References" # Used in the UI
     folder: "content/references" # The path to the folder where the documents are stored
@@ -34,3 +25,39 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Icon", name: "icon", widget: "string"}
       - {label: "Description", name: "description", widget: "markdown"}
+  - name: "contact" # Used in routes, e.g., /admin/collections/blog
+    label: "Contact" # Used in the UI
+    folder: "content" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    format: 'json'
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Content", name: "content", widget: "markdown"}
+      - {label: "IconMe", name: "iconMe", widget: "string"}
+      - {label: "TextMe", name: "textMe", widget: "markdown"}
+      - {label: "IconLocation", name: "iconLocation", widget: "string"}
+      - {label: "TextLocation", name: "textLocation", widget: "markdown"}
+      - {label: "IconMail", name: "iconMail", widget: "string"}
+      - {label: "TextMail", name: "textMail", widget: "markdown"}
+  - name: "ueber-mich" # Used in routes, e.g., /admin/collections/blog
+    label: "Über mich" # Used in the UI
+    folder: "content" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    format: 'json'
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Content", name: "content", widget: "markdown"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Copyright Link", name: "copyrightLink", widget: "string"}
+      - {label: "Copyright Text", name: "copyrightText", widget: "string"}
+  - name: "impressum" # Used in routes, e.g., /admin/collections/blog
+    label: "Impressum" # Used in the UI
+    folder: "content" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    format: 'json'
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Content", name: "content", widget: "markdown"}
