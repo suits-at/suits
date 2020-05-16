@@ -15,7 +15,7 @@
   export default {
     components: {},
     async asyncData() {
-      return await import('~/content/ueber-mich.json');
+      return await import('~/content/about/ueber-mich.json');
     }
   };
 </script>

@@ -23,7 +23,7 @@
   export default {
     components: {},
     async asyncData() {
-      return await import('~/content/kontakt.json');
+      return await import('~/content/contact/kontakt.json');
     }
   };
 </script>

@@ -27,7 +27,7 @@ collections:
       - {label: "Description", name: "description", widget: "markdown"}
   - name: "contact" # Used in routes, e.g., /admin/collections/blog
     label: "Contact" # Used in the UI
-    folder: "content" # The path to the folder where the documents are stored
+    folder: "content/contact" # The path to the folder where the documents are stored
     create: false # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     format: 'json'
@@ -42,7 +42,7 @@ collections:
       - {label: "TextMail", name: "textMail", widget: "markdown"}
   - name: "ueber-mich" # Used in routes, e.g., /admin/collections/blog
     label: "Über mich" # Used in the UI
-    folder: "content" # The path to the folder where the documents are stored
+    folder: "content/about" # The path to the folder where the documents are stored
     create: false # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     format: 'json'
@@ -54,7 +54,7 @@ collections:
       - {label: "Copyright Text", name: "copyrightText", widget: "string"}
   - name: "impressum" # Used in routes, e.g., /admin/collections/blog
     label: "Impressum" # Used in the UI
-    folder: "content" # The path to the folder where the documents are stored
+    folder: "content/imprint" # The path to the folder where the documents are stored
     create: false # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     format: 'json'

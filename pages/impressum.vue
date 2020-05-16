@@ -9,7 +9,7 @@
 export default {
   components: {},
   async asyncData() {
-    return await import('~/content/impressum.json');
+    return await import('~/content/imprint/impressum.json');
   }
 };
 </script>
