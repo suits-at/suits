@@ -84,7 +84,11 @@ h2 {
 }
 
 .min-h-screen {
-  min-height: calc((100vh) - 4.1rem);
+  min-height: calc((100vh) - 7rem);
+}
+
+.justify-evenly{
+  justify-content: space-evenly;
 }
 
 footer {

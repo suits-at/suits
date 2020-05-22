@@ -1,10 +1,50 @@
 <template>
   <div>
-    <div class="min-h-screen flex justify-center items-center text-center mx-auto">
-      <logo />
-      <div class="more" />
-    </div>
-    <div>
+    <section
+      class="min-h-screen justify-evenly flex justify-between flex-col items-center text-center mx-auto"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        height="250px"
+        class="max-w-3xl"
+        viewBox="0 0 767.7 295.8"
+      >
+        <style type="text/css">
+          .st1 {
+            fill: #646464;
+          }
+        </style>
+        <rect x="-1776.1" y="-1165.8" class="st1" width="3.4" height="1.7" />
+        <polygon
+          class="st1"
+          points="425.3 47.4 409.3 47.4 393.4 47.4 381.4 265.6 409.3 295.8 437.3 265.6 "
+        />
+        <path
+          class="st1"
+          d="M419.4 0.6c-2.4-0.8-17.7-0.8-20.1 0 -3.7 1.1-8.3 5-9.4 8.8 -1.4 5.1 3.4 20.2 3.4 20.2h16 16c0 0 4.8-15.1 3.4-20.2C427.7 5.5 423.1 1.7 419.4 0.6z"
+        />
+        <path
+          class="st1"
+          d="M123.9 100.7c-9-12.2-20.5-19.9-36.3-19.9 -15.1 0-29.5 11.6-29.5 27.3 0 40.8 95.9 23.7 95.9 104.9 0 48.5-30.2 82.8-79.6 82.8 -33.4 0-57.8-19.3-74.4-47.2l30.5-29.8c6.4 18.6 23.4 35.3 43.6 35.3 19.3 0 31.1-16.4 31.1-35 0-25-23.1-32.1-42-39.5 -31.1-12.8-53.9-28.6-53.9-66.1C9.3 73.4 39.1 41 79.9 41c21.5 0 51.3 10.6 66.1 27L123.9 100.7z"
+        />
+        <path
+          class="st1"
+          d="M176.4 47.4h47.2v135.4c0 29.8 2.6 71.9 42.7 71.9s42.7-42 42.7-71.9V47.4h47.2v144.7c0 59-25 103.6-89.8 103.6s-89.8-44.6-89.8-103.6V47.4z"
+        />
+        <path
+          class="st1"
+          d="M553 289.4h-47.2V88.5h-48.8V47.4h144.7v41.1H553V289.4z"
+        />
+        <path
+          class="st1"
+          d="M737.6 100.7c-9-12.2-20.5-19.9-36.3-19.9 -15.1 0-29.5 11.6-29.5 27.3 0 40.8 95.9 23.7 95.9 104.9 0 48.5-30.2 82.8-79.6 82.8 -33.4 0-57.8-19.3-74.4-47.2l30.5-29.8c6.4 18.6 23.4 35.3 43.6 35.3 19.3 0 31.1-16.4 31.1-35 0-25-23.1-32.1-42-39.5 -31.1-12.8-53.9-28.6-53.9-66.1 0-40.1 29.8-72.5 70.6-72.5 21.5 0 51.3 10.6 66.1 27L737.6 100.7z"
+        />
+      </svg>
+      <br>
+      <a href="#referenzen/" class="more" />
+    </section>
+    <section>
       <h1 id="referenzen">
         //Referenzen
       </h1>
@@ -15,18 +55,15 @@
           </nuxt-link>
         </li>
       </ul>
-    </div>
+    </section>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import Logo from '~/components/Logo.vue';
 
 export default Vue.extend({
-  components: {
-    Logo
-  },
+  components: {},
   data() {
     // Using webpacks context to gather all files from a folder
     const referencesCTX = require.context(
@@ -37,7 +74,7 @@ export default Vue.extend({
 
     const references = referencesCTX.keys().map((key: string) => ({
       ...referencesCTX(key),
-      _path: `/references/${key.replace('.json', '').replace('./', '')}`
+      _path: `/references/${key.replace('.json', '').replace('./', '')}`,
     }));
 
     return { references };
@@ -61,11 +98,11 @@ export default Vue.extend({
       script: [
         {
           src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
-          defer: true
-        }
-      ]
+          defer: true,
+        },
+      ],
     };
-  }
+  },
 });
 </script>
 
@@ -76,18 +113,18 @@ export default Vue.extend({
 }*/
 
 .more {
-	border: inset 3rem;
-	border-bottom-width: 0;
-	border-color: #49a3df transparent transparent;
-	border-top-style: solid;
-	content: '';
-	cursor: pointer;
-	display: block;
-	/*height: 0;*/
-	/*left: 50%;*/
-	/*position: absolute;*/
-	/*transform: translateX(-50%);*/
-	/*width: 0;*/
+  border: inset 3rem;
+  border-bottom-width: 0;
+  border-color: #49a3df transparent transparent;
+  border-top-style: solid;
+  cursor: pointer;
+  /*content: '';*/
+  /*display: block;*/
+  /*height: 0;*/
+  /*left: 50%;*/
+  /*position: absolute;*/
+  /*transform: translateX(-50%);*/
+  /*width: 0;*/
 }
 /*.container {
   align-items: center;
