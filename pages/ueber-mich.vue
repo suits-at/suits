@@ -6,7 +6,7 @@
 				<img :src="image" alt="Sebastian Ulbel" title="Sebastian Ulbel">
 				<figcaption class="text-center text-sm">© <a class="text-xs" :href="copyrightLink" target="_blank">{{copyrightText}}</a></figcaption>
 			</figure>
-			<div v-html="$md.render(content)" class="w-full sm:w-1/2 sm:ml-8 lg:ml-24 max-w-2xl"/>
+			<div class="w-full sm:w-1/2 sm:ml-8 lg:ml-24 max-w-2xl" v-html="$md.render(content)"/>
 		</div>
 	</article>
 </template>

@@ -5,7 +5,7 @@
       <div class="more" />
     </div>
     <div>
-      <h2 class="subtitle" id="referenzen">
+      <h2 id="referenzen" class="subtitle">
         //Referenzen
       </h2>
       <ul>
