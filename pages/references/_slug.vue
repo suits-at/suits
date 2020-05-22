@@ -1,8 +1,8 @@
 <template>
   <section>
     <h1>{{ title }}</h1>
-    <p>{{ date }}</p>
-    <p>{{ url }}</p>
+    <p>Datum: {{ date }}</p>
+    <p>Website: <a :href="url" target="_blank">{{ url }}</a></p>
     <img :src="screenshot" />
   </section>
 </template>
