@@ -28,7 +28,7 @@
   };
 </script>
 
-<style>
+<style lang="scss" scoped>
 	.override-link-color a{
 		color: #646464;
 	}

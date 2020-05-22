@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="main">
+    <div class="min-h-screen flex justify-center items-center text-center mx-auto">
       <logo />
       <div class="more" />
     </div>
     <div>
-      <h2 id="referenzen">
+      <h1 id="referenzen">
         //Referenzen
-      </h2>
+      </h1>
       <ul>
         <li v-for="reference in references" :key="reference.title">
           <nuxt-link :to="reference._path">
@@ -69,11 +69,11 @@ export default Vue.extend({
 });
 </script>
 
-<style>
+<style lang="scss" scoped>
 /*Sample `apply` at-rules with Tailwind CSS*/
-.main {
+/*.main {
 	@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
+}*/
 
 .more {
 	border: inset 3rem;
@@ -105,8 +105,4 @@ export default Vue.extend({
 	padding-bottom: 15px;
 	word-spacing: 5px;
 }*/
-
-.links {
-	padding-top: 15px;
-}
 </style>
