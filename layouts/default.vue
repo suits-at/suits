@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div v-show="menuOpen" class="absolute h-screen w-screen z-50 bg-gray-100 p-4">
+		<nav v-show="menuOpen" class="absolute h-screen w-screen z-50 bg-gray-100 p-4">
 			<p @click="toggleMenu">CLOSE</p>
 			<ul @click="toggleMenu">
 				<li>
@@ -16,7 +16,7 @@
 					<nuxt-link to="/kontakt/">Kontakt</nuxt-link>
 				</li>
 			</ul>
-		</div>
+		</nav>
 		<div v-show="!menuOpen" class="container">
 			<header
 				class="flex flex-wrap container justify-between fixed z-10 py-4 top-0"
@@ -62,12 +62,12 @@
 					</svg>
 				</nuxt-link>
 				<template>
-					<div class="hidden sm:block">
+					<nav class="hidden sm:block">
 						<nuxt-link to="/#referenzen/">Referenzen</nuxt-link>
 						<nuxt-link to="/ueber-mich/">Über mich</nuxt-link>
 						<nuxt-link to="/leistungen/">Leistungen</nuxt-link>
 						<nuxt-link to="/kontakt/">Kontakt</nuxt-link>
-					</div>
+					</nav>
 					<div class="block sm:hidden">
 						<p class="p-4" @click="toggleMenu">Menu</p>
 					</div>
@@ -127,13 +127,14 @@
 
 	html {
 		box-sizing: border-box;
-		font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
 		Roboto, 'Helvetica Neue', Arial, sans-serif;
+		color: #646464;
 		font-size: 16px;
 		-moz-osx-font-smoothing: grayscale;
 		-webkit-font-smoothing: antialiased;
-		/*-ms-text-size-adjust: 100%;*/
-		/*-webkit-text-size-adjust: 100%;*/
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%;
 		word-spacing: 1px;
 	}
 
@@ -149,13 +150,34 @@
 		opacity: 0.95;
 	}
 
-	header a {
+	nav a {
 		padding: 1rem;
-		font-size: 22px;
+		font-size: 24px;
+		position: relative;
+		color: #646464;
+	}
+
+	nav a:after {
+		position: absolute;
+		top: 3rem;
+		left: 1rem;
+		width: 80%;
+		content: '';
+		height: 2px;
+		background-color: rgba(0, 0, 0, 0);
+		transition: all .15s ease
+	}
+
+	nav a:hover:after, nav a.nuxt-link-active:after {
+		background-color: #49a3df;
 	}
 
 	p, li, a {
 		font-size: 20px;
+	}
+
+	a {
+		color: #49a3df;
 	}
 
 	p {
@@ -168,19 +190,17 @@
 	}
 
 	h1 {
-		color: #35495e;
-		font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-		'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-		font-size: 64px;
-		font-weight: 300;
+		/*color: #35495e;*/
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 58px;
+		/*font-weight: 300;*/
 		letter-spacing: 1px;
 		margin-bottom: 1.5rem;
 	}
 
 	h2 {
-		color: #35495e;
-		font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-		'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+		/*color: #35495e;*/
 		font-size: 40px;
 		font-weight: 200;
 		letter-spacing: 1px;
@@ -201,5 +221,32 @@
 	footer .svg-inline--fa {
 		margin-left: 1rem;
 		margin-right: 1rem;
+	}
+
+	/* work-sans-regular - latin */
+	@font-face {
+		font-family: 'Work Sans';
+		font-style: normal;
+		font-weight: 400;
+		src: url('/fonts/work-sans-v7-latin-regular.eot'); /* IE9 Compat Modes */
+		src: local(''),
+		url('/fonts/work-sans-v7-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('/fonts/work-sans-v7-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		url('/fonts/work-sans-v7-latin-regular.woff') format('woff'), /* Modern Browsers */
+		url('/fonts/work-sans-v7-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('/fonts/work-sans-v7-latin-regular.svg#WorkSans') format('svg'); /* Legacy iOS */
+	}
+	/* work-sans-700 - latin */
+	@font-face {
+		font-family: 'Work Sans';
+		font-style: normal;
+		font-weight: 700;
+		src: url('/fonts/work-sans-v7-latin-700.eot'); /* IE9 Compat Modes */
+		src: local(''),
+		url('/fonts/work-sans-v7-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('/fonts/work-sans-v7-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+		url('/fonts/work-sans-v7-latin-700.woff') format('woff'), /* Modern Browsers */
+		url('/fonts/work-sans-v7-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('/fonts/work-sans-v7-latin-700.svg#WorkSans') format('svg'); /* Legacy iOS */
 	}
 </style>

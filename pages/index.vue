@@ -5,7 +5,7 @@
       <div class="more" />
     </div>
     <div>
-      <h2 id="referenzen" class="subtitle">
+      <h2 id="referenzen">
         //Referenzen
       </h2>
       <ul>
@@ -98,13 +98,13 @@ export default Vue.extend({
   text-align: center;
 }*/
 
-.subtitle {
+/*.subtitle {
 	color: #526488;
 	font-size: 42px;
 	font-weight: 300;
 	padding-bottom: 15px;
 	word-spacing: 5px;
-}
+}*/
 
 .links {
 	padding-top: 15px;

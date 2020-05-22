@@ -1,10 +1,10 @@
 <template>
-  <article>
+  <section>
     <h1>{{ title }}</h1>
     <p>{{ date }}</p>
     <p>{{ url }}</p>
     <img :src="screenshot" />
-  </article>
+  </section>
 </template>
 
 <script>
