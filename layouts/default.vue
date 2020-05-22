@@ -4,16 +4,16 @@
 			<p @click="toggleMenu">CLOSE</p>
 			<ul @click="toggleMenu">
 				<li>
-					<nuxt-link to="/#referenzen">Referenzen</nuxt-link>
+					<nuxt-link to="/#referenzen/">Referenzen</nuxt-link>
 				</li>
 				<li>
-					<nuxt-link to="/ueber-mich">Über mich</nuxt-link>
+					<nuxt-link to="/ueber-mich/">Über mich</nuxt-link>
 				</li>
 				<li>
-					<nuxt-link to="/leistungen">Leistungen</nuxt-link>
+					<nuxt-link to="/leistungen/">Leistungen</nuxt-link>
 				</li>
 				<li>
-					<nuxt-link to="/kontakt">Kontakt</nuxt-link>
+					<nuxt-link to="/kontakt/">Kontakt</nuxt-link>
 				</li>
 			</ul>
 		</div>
@@ -63,10 +63,10 @@
 				</nuxt-link>
 				<template>
 					<div class="hidden sm:block">
-						<nuxt-link to="/#referenzen">Referenzen</nuxt-link>
-						<nuxt-link to="/ueber-mich">Über mich</nuxt-link>
-						<nuxt-link to="/leistungen">Leistungen</nuxt-link>
-						<nuxt-link to="/kontakt">Kontakt</nuxt-link>
+						<nuxt-link to="/#referenzen/">Referenzen</nuxt-link>
+						<nuxt-link to="/ueber-mich/">Über mich</nuxt-link>
+						<nuxt-link to="/leistungen/">Leistungen</nuxt-link>
+						<nuxt-link to="/kontakt/">Kontakt</nuxt-link>
 					</div>
 					<div class="block sm:hidden">
 						<p class="p-4" @click="toggleMenu">Menu</p>
@@ -79,14 +79,26 @@
 			<div class="container flex flex-wrap text-center">
 				<a class="w-full sm:w-1/4 py-4" href="mailto:office@suits.at">office@suits.at</a>
 				<div class="w-full flex-1 py-4">
-					<font-awesome-icon :icon="['fab', 'github']" size="2x"/>
-					<font-awesome-icon :icon="['fab', 'medium-m']" size="2x"/>
-					<font-awesome-icon :icon="['fab', 'xing']" size="2x"/>
-					<font-awesome-icon :icon="['fab', 'linkedin-in']" size="2x"/>
-					<font-awesome-icon :icon="['fab', 'stack-overflow']" size="2x"/>
-					<font-awesome-icon :icon="['fab', 'twitter']" size="2x"/>
+					<a href="https://github.com/suits-at" title="Github" target="_blank">
+						<font-awesome-icon :icon="['fab', 'github']" size="2x"/>
+					</a>
+					<a href="https://medium.com/@suits_at" title="Medium" target="_blank">
+						<font-awesome-icon :icon="['fab', 'medium-m']" size="2x"/>
+					</a>
+					<a href="https://www.xing.com/profile/Sebastian_Ulbel" title="Xing" target="_blank">
+						<font-awesome-icon :icon="['fab', 'xing']" size="2x"/>
+					</a>
+					<a href="https://www.linkedin.com/in/suits-at/" title="LinkedIn" target="_blank">
+						<font-awesome-icon :icon="['fab', 'linkedin-in']" size="2x"/>
+					</a>
+					<a href="https://stackoverflow.com/users/4668758/suits-at?tab=profile" title="Stackoverflow" target="_blank">
+						<font-awesome-icon :icon="['fab', 'stack-overflow']" size="2x"/>
+					</a>
+					<a href="https://twitter.com/suits_at" title="Twitter" target="_blank">
+						<font-awesome-icon :icon="['fab', 'twitter']" size="2x"/>
+					</a>
 				</div>
-				<a class="w-full sm:w-1/4 py-4" href="/impressum">Impressum</a>
+				<a class="w-full sm:w-1/4 py-4" href="/impressum/">Impressum</a>
 			</div>
 		</footer>
 	</div>
