@@ -84,7 +84,7 @@ h2 {
 }
 
 .min-h-screen {
-  min-height: calc((100vh) - 7rem);
+  min-height: calc((100vh) - 6.7rem);
 }
 
 .justify-evenly{
@@ -109,6 +109,7 @@ footer {
 // fonts
 /* work-sans-regular - latin */
 @font-face {
+  font-display: swap;
   font-family: 'Work Sans';
   font-style: normal;
   font-weight: 400;
@@ -127,6 +128,7 @@ footer {
 
 /* work-sans-700 - latin */
 @font-face {
+  font-display: swap;
   font-family: 'Work Sans';
   font-style: normal;
   font-weight: 700;
