@@ -45,8 +45,8 @@
       <br>
       <a href="#referenzen/" class="more" title="Referenzen" />
     </section>
-    <section>
-      <h1 id="referenzen">
+    <section id="referenzen">
+      <h1>
         //Referenzen
       </h1>
       <ul class="override-link-color">

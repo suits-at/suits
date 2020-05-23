@@ -1,17 +1,17 @@
 <template>
 	<section class="override-link-color">
 		<h1>//{{ title }}</h1>
-		<div v-html="$md.render(content)"/>
+		<div v-html="$md.render(content)" class="mb-8"/>
 		<div class="flex flex-wrap justify-around">
-			<div class="text-center">
+			<div class="w-full sm:w-1/3 text-center py-4">
 				<font-awesome-icon :icon="['fal', iconMe]" size="3x" color="#646464"/>
 				<div v-html="$md.render(textMe)"/>
 			</div>
-			<div class="text-center">
+			<div class="w-full sm:w-1/3 text-center py-4">
 				<font-awesome-icon :icon="['fal', iconLocation]" size="3x" color="#646464"/>
 				<div v-html="$md.render(textLocation)"/>
 			</div>
-			<div class="text-center">
+			<div class="w-full sm:w-1/3 text-center py-4">
 				<font-awesome-icon :icon="['fal', iconMail]" size="3x" color="#646464"/>
 				<div v-html="$md.render(textMail)"/>
 			</div>

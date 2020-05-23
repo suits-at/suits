@@ -22,7 +22,7 @@ header {
   background: #fefefe;
   opacity: 0.95;
 
-  nav a {
+  .main-nav a {
     padding: 1rem;
     font-size: 24px;
     position: relative;
@@ -31,7 +31,7 @@ header {
   }
 }
 
-nav a:after {
+.main-nav a:after {
   position: absolute;
   top: 3rem;
   left: 1rem;
@@ -48,6 +48,7 @@ nav a.nuxt-link-active:after {
 }
 
 p,
+span,
 li,
 a {
   font-size: 20px;
@@ -70,17 +71,23 @@ h1 {
   /*color: #35495e;*/
   text-transform: uppercase;
   //font-weight: 700;
-  font-size: 58px;
+  font-size: 38px;
   /*font-weight: 300;*/
   letter-spacing: 1px;
   margin-bottom: 1.5rem;
+  @media all and (min-width: 450px) {
+    font-size: 58px;
+  }
 }
 
 h2 {
   /*color: #35495e;*/
-  font-size: 40px;
+  font-size: 22px;
   //font-weight: 200;
   letter-spacing: 1px;
+  @media all and (min-width: 450px) {
+    font-size: 40px;
+  }
 }
 
 .min-h-screen {
@@ -107,6 +114,7 @@ footer {
   .svg-inline--fa {
     margin-left: 1rem;
     margin-right: 1rem;
+    margin-bottom: 1rem;
   }
 }
 
