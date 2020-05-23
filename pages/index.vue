@@ -88,6 +88,8 @@ export default Vue.extend({
       _path: `/references/${key.replace('.json', '').replace('./', '')}`,
     }));
 
+    references.sort((a, b) => parseFloat(b.date) - parseFloat(a.date));
+
     return { references };
   },
   mounted(): void {
