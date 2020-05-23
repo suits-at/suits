@@ -42,10 +42,16 @@
           d="M737.6 100.7c-9-12.2-20.5-19.9-36.3-19.9 -15.1 0-29.5 11.6-29.5 27.3 0 40.8 95.9 23.7 95.9 104.9 0 48.5-30.2 82.8-79.6 82.8 -33.4 0-57.8-19.3-74.4-47.2l30.5-29.8c6.4 18.6 23.4 35.3 43.6 35.3 19.3 0 31.1-16.4 31.1-35 0-25-23.1-32.1-42-39.5 -31.1-12.8-53.9-28.6-53.9-66.1 0-40.1 29.8-72.5 70.6-72.5 21.5 0 51.3 10.6 66.1 27L737.6 100.7z"
         />
       </svg>
-      <br>
-      <a href="#referenzen/" class="more" title="Referenzen" />
+      <br />
+      <nuxt-link
+        v-scroll-to="'#referenzen'"
+        to="#referenzen/"
+        class="more"
+        title="Referenzen"
+      />
+      <div id="referenzen" class="mb-4" />
     </section>
-    <section id="referenzen">
+    <section>
       <h1>
         //Referenzen
       </h1>
@@ -62,6 +68,9 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import VueScrollTo from 'vue-scrollto';
+
+Vue.use(VueScrollTo);
 
 export default Vue.extend({
   components: {},
@@ -81,6 +90,11 @@ export default Vue.extend({
     return { references };
   },
   mounted(): void {
+    if(!this.$nuxt.$isServer){
+      if(this.$nuxt.context.route.fullPath === '/#referenzen/'){
+        this.$scrollTo('#referenzen');
+      }
+    }
     // @ts-ignore
     if (window.netlifyIdentity) {
       // @ts-ignore
