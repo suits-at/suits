@@ -36,6 +36,7 @@ export default {
       {name:"theme-color", content:"#ffffff"}
     ],
     link: [
+      {rel:"preconnect", href:"https://cdn.jsdelivr.net"}, // preconnect serviceworker
       {rel:"preload", href:"/fonts/work-sans-v7-latin-regular.woff2", as:"font", type:"font/woff2", crossorigin:"true"},
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel:"apple-touch-icon", sizes:"57x57", href:"/apple-icon-57x57.png"},

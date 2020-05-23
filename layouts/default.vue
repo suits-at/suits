@@ -21,7 +21,7 @@
 			<header
 				class="flex flex-wrap container px-0 justify-between fixed z-10 py-4 top-0"
 			>
-				<nuxt-link to="/" class="p-0">
+				<nuxt-link to="/" class="p-0" title="Startseite" alt="Startseite">
 					<svg
 						class="inline"
 						xmlns="http://www.w3.org/2000/svg"
@@ -29,6 +29,7 @@
 						height="52"
 						viewBox="0 0 767.7 295.8"
 					>
+						<title>SUITS Logo</title>
 						<style type="text/css">
 							.st1 {
 								fill: #646464;
@@ -79,22 +80,22 @@
 			<div class="container flex flex-wrap text-center">
 				<a class="w-full sm:w-1/4 py-4" href="mailto:office@suits.at">office@suits.at</a>
 				<div class="w-full flex-1 py-4">
-					<a href="https://github.com/suits-at" title="Github" target="_blank">
+					<a href="https://github.com/suits-at" title="Github" target="_blank" rel="noopener">
 						<font-awesome-icon :icon="['fab', 'github']" size="2x"/>
 					</a>
-					<a href="https://medium.com/@suits_at" title="Medium" target="_blank">
+					<a href="https://medium.com/@suits_at" title="Medium" target="_blank" rel="noopener">
 						<font-awesome-icon :icon="['fab', 'medium-m']" size="2x"/>
 					</a>
-					<a href="https://www.xing.com/profile/Sebastian_Ulbel" title="Xing" target="_blank">
+					<a href="https://www.xing.com/profile/Sebastian_Ulbel" title="Xing" target="_blank" rel="noopener">
 						<font-awesome-icon :icon="['fab', 'xing']" size="2x"/>
 					</a>
-					<a href="https://www.linkedin.com/in/suits-at/" title="LinkedIn" target="_blank">
+					<a href="https://www.linkedin.com/in/suits-at/" title="LinkedIn" target="_blank" rel="noopener">
 						<font-awesome-icon :icon="['fab', 'linkedin-in']" size="2x"/>
 					</a>
-					<a href="https://stackoverflow.com/users/4668758/suits-at?tab=profile" title="Stackoverflow" target="_blank">
+					<a href="https://stackoverflow.com/users/4668758/suits-at?tab=profile" title="Stackoverflow" target="_blank" rel="noopener">
 						<font-awesome-icon :icon="['fab', 'stack-overflow']" size="2x"/>
 					</a>
-					<a href="https://twitter.com/suits_at" title="Twitter" target="_blank">
+					<a href="https://twitter.com/suits_at" title="Twitter" target="_blank" rel="noopener">
 						<font-awesome-icon :icon="['fab', 'twitter']" size="2x"/>
 					</a>
 				</div>

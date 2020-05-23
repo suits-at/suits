@@ -87,7 +87,7 @@ h2 {
   min-height: calc((100vh) - 6.7rem);
 }
 
-.justify-evenly{
+.justify-evenly {
   justify-content: space-evenly;
 }
 
@@ -96,13 +96,23 @@ footer {
   padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: #2e2e2e;
-  color: #646464;
-  a, a:active, a:focus {
-    color: #646464;
+  color: #b1b1b1;
+
+  a,
+  a:active,
+  a:focus {
+    color: #b1b1b1;
   }
+
   .svg-inline--fa {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+}
+
+.override-link-color {
+  a {
+    color: #646464;
   }
 }
 

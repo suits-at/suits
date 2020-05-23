@@ -10,6 +10,7 @@
         class="max-w-3xl"
         viewBox="0 0 767.7 295.8"
       >
+        <title>SUITS Logo</title>
         <style type="text/css">
           .st1 {
             fill: #646464;
@@ -42,14 +43,14 @@
         />
       </svg>
       <br>
-      <a href="#referenzen/" class="more" />
+      <a href="#referenzen/" class="more" title="Referenzen" />
     </section>
     <section>
       <h1 id="referenzen">
         //Referenzen
       </h1>
-      <ul>
-        <li v-for="reference in references" :key="reference.title">
+      <ul class="override-link-color">
+        <li v-for="reference in references" :key="reference.title" class="my-4">
           <nuxt-link :to="reference._path">
             {{ reference.title }}
           </nuxt-link>

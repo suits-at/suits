@@ -27,9 +27,3 @@
     }
   };
 </script>
-
-<style lang="scss" scoped>
-	.override-link-color::v-deep a{
-		color: #646464;
-	}
-</style>
