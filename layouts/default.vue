@@ -19,7 +19,7 @@
 		</nav>
 		<div v-show="!menuOpen" class="container">
 			<header
-				class="flex flex-wrap container justify-between fixed z-10 py-4 top-0"
+				class="flex flex-wrap container px-0 justify-between fixed z-10 py-4 top-0"
 			>
 				<nuxt-link to="/" class="p-0">
 					<svg
@@ -73,7 +73,7 @@
 					</div>
 				</template>
 			</header>
-			<nuxt class="pt-24 min-h-screen"/>
+			<nuxt class="py-24 min-h-screen"/>
 		</div>
 		<footer v-show="!menuOpen">
 			<div class="container flex flex-wrap text-center">
