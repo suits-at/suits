@@ -34,7 +34,7 @@
     "vue-scrollto": "^2.18.1"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^1.0.1",
+    "@nuxt/typescript-build": "^1.0.2",
     "@nuxtjs/eslint-config-typescript": "^2.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/tailwindcss": "^2.0.0",
