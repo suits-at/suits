@@ -56,13 +56,16 @@
       <h1>
         //Referenzen
       </h1>
-      <ul class="override-link-color">
-        <li v-for="reference in references" :key="reference.title" class="my-4">
-          <nuxt-link :to="reference._path">
-            {{ reference.title }}
+      <div class="flex flex-wrap override-link-color">
+        <div v-for="reference in references" :key="reference.title" class="w-full md:w-1/2 lg:w-1/3 mb-16 items-center text-center self-center">
+          <nuxt-link :to="reference._path" class="">
+            <h3>{{ reference.title }}</h3>
+            <div class="flex w-full justify-center">
+              <img :src="reference.thumbnail" alt="reference.title" width="300"/>
+            </div>
           </nuxt-link>
-        </li>
-      </ul>
+        </div>
+      </div>
     </section>
   </div>
 </template>

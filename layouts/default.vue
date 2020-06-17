@@ -88,7 +88,7 @@
           </template>
         </div>
       </header>
-      <nuxt class="container pt-24 pb-12 min-h-screen" />
+      <nuxt class="container pt-32 pb-12 min-h-screen" />
     </div>
     <footer v-show="!menuOpen">
       <div class="container flex flex-wrap text-center">

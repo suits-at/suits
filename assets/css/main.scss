@@ -73,10 +73,11 @@ h1 {
   //font-weight: 700;
   font-size: 38px;
   /*font-weight: 300;*/
+  //line-height: 1;
   letter-spacing: 1px;
   margin-bottom: 1.5rem;
   @media all and (min-width: 450px) {
-    font-size: 58px;
+    font-size: 52px;
   }
 }
 
@@ -87,6 +88,16 @@ h2 {
   letter-spacing: 1px;
   @media all and (min-width: 450px) {
     font-size: 40px;
+  }
+}
+
+h3{
+  line-height: 1.1;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  @media all and (min-width: 450px) {
+    font-size: 26px;
   }
 }
 

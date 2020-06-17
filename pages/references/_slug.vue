@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>{{ title }}</h1>
+    <h1 class="leading-none">{{ title }}</h1>
     <p>Datum: {{ date }}</p>
     <p>Website: <a :href="url" target="_blank">{{ url }}</a></p>
     <img :src="screenshot" />
