@@ -2,8 +2,7 @@ import path from 'path';
 import glob from 'glob';
 
 const dynamicRoutes = getDynamicPaths({
-  '/references': 'references/*.json',
-  '/services': 'services/*.json',
+  '/references': 'references/*.json'
 });
 
 function getDynamicPaths(urlFilepathTable) {
@@ -17,6 +16,7 @@ function getDynamicPaths(urlFilepathTable) {
   );
 }
 export default {
+  target: 'static',
   mode: 'universal',
   /*
    ** Headers of the page
