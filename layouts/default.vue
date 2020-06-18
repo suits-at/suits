@@ -37,11 +37,6 @@
               viewBox="0 0 767.7 295.8"
             >
               <title>SUITS Logo</title>
-              <style type="text/css">
-                .st1 {
-                  fill: #646464;
-                }
-              </style>
               <rect
                 x="-1776.1"
                 y="-1165.8"
