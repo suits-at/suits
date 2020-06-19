@@ -16,8 +16,7 @@ function getDynamicPaths(urlFilepathTable) {
   );
 }
 export default {
-  // do not use for now, due to open bugs
-  // target: 'static',
+  target: 'static',
   mode: 'universal',
   /*
    ** Headers of the page
