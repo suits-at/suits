@@ -4,23 +4,20 @@
       v-show="menuOpen"
       class="absolute h-screen w-screen z-50 bg-gray-100 p-4"
     >
-      <p @click="toggleMenu">CLOSE</p>
+      <p @click="toggleMenu" class="text-right">X</p>
       <nav @click="toggleMenu">
-        <ul>
-          <li>
+        <ul class="list-none text-center pl-0">
+          <li class="mb-8">
             <nuxt-link to="/#referenzen/">Referenzen</nuxt-link>
           </li>
-          <li>
+          <li class="mb-8">
             <nuxt-link to="/ueber-mich/">Über mich</nuxt-link>
           </li>
-          <li>
+          <li class="mb-8">
             <nuxt-link to="/leistungen/">Leistungen</nuxt-link>
           </li>
-          <li>
+          <li class="mb-8">
             <nuxt-link to="/kontakt/">Kontakt</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/impressum/">Impressum</nuxt-link>
           </li>
         </ul>
       </nav>
