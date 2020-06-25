@@ -1,9 +1,10 @@
 <template>
   <section>
-    <h1 class="leading-none">{{ title }}</h1>
+    <h1 class="leading-none break-words">{{ title }}</h1>
     <p>Datum: {{ date }}</p>
-    <p>Website: <a :href="url" target="_blank">{{ url }}</a></p>
-    <img :src="screenshot" />
+    <p>Website: <a class="break-words" :href="url" target="_blank">{{ url }}</a></p>
+    <img :src="screenshot" :alt="title" :title="title" class="mb-8" />
+    <nuxt-link to="/#referenzen/" class="custom-link">zurück zu den Referenzen</nuxt-link>
   </section>
 </template>
 
@@ -14,3 +15,11 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+  .custom-link{
+    color: #646464;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+</style>

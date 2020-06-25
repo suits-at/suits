@@ -68,23 +68,20 @@ ul {
 }
 
 h1 {
-  /*color: #35495e;*/
   text-transform: uppercase;
-  //font-weight: 700;
-  font-size: 38px;
-  /*font-weight: 300;*/
-  //line-height: 1;
+  font-size: 28px;
   letter-spacing: 1px;
   margin-bottom: 1.5rem;
   @media all and (min-width: 450px) {
-    font-size: 52px;
+    font-size: 38px;
+  }
+  @media all and (min-width: 1024px) {
+    font-size: 48px;
   }
 }
 
 h2 {
-  /*color: #35495e;*/
   font-size: 22px;
-  //font-weight: 200;
   letter-spacing: 1px;
   @media all and (min-width: 450px) {
     font-size: 40px;
