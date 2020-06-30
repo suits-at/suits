@@ -1,8 +1,8 @@
-import path from 'path';
-import glob from 'glob';
+// import path from 'path';
+// import glob from 'glob';
 
-const dynamicRoutes = getDynamicPaths({
-  '/references': 'references/*.json'
+/* const dynamicRoutes = getDynamicPaths({
+  '/references': 'references/!*.json'
 });
 
 function getDynamicPaths(urlFilepathTable) {
@@ -14,7 +14,7 @@ function getDynamicPaths(urlFilepathTable) {
         .map((filepath) => `${url}/${path.basename(filepath, '.json')}`);
     })
   );
-}
+} */
 export default {
   target: 'static',
   mode: 'universal',
@@ -113,7 +113,7 @@ export default {
     // extend(config, ctx) {}
   },
   generate: {
-    routes: dynamicRoutes,
+    // routes: dynamicRoutes,
     fallback: true
   }
 };
