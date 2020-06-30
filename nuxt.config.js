@@ -111,11 +111,12 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend (config, ctx) {
+/*    extend (config, ctx) {
       if (ctx && ctx.isClient) {
-        config.optimization.splitChunks.chunks = 'all';
+         config.optimization.splitChunks.chunks = 'all';
+         config.optimization.splitChunks.maxSize = 102400;
       }
-    }
+    } */
   },
   generate: {
     // routes: dynamicRoutes,
