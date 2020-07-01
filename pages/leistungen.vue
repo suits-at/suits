@@ -2,7 +2,7 @@
 	<section>
 		<h1>//Leistungen</h1>
 		<div class="flex flex-wrap">
-			<div v-for="leistung in leistungen" :key="leistung.title" class="w-full sm:w-1/3 p-4 text-center">
+			<div v-for="leistung in leistungen" :key="leistung.title" class="w-full sm:w-1/3 px-8 py-4 text-center">
 				<font-awesome-icon :icon="['fal', `${leistung.icon}`]" size="5x" color="#646464"/>
 				<h2>{{ leistung.title }}</h2>
 				<div v-html="$md.render(leistung.description)"/>
