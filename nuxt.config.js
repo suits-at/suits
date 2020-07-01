@@ -77,21 +77,16 @@ export default {
    */
   buildModules: [
     '@nuxt/typescript-build',
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
     'vue-scrollto/nuxt',
+    '@nuxtjs/markdownit',
+    'nuxt-lazy-load'
   ],
   /*
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
-    '@nuxtjs/markdownit',
-    'nuxt-lazy-load'
   ],
   markdownit: {
     injected: true
@@ -99,11 +94,6 @@ export default {
   purgeCSS: {
     whitelistPatterns: [/svg.*/, /fa.*/]
   },
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: {},
   /*
    ** Build configuration
    */
