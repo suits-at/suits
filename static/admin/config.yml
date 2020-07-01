@@ -48,6 +48,8 @@ collections:
     format: 'json'
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Heading", name: "heading", widget: "string"}
+      - {label: "List", name: "list", widget: "list"}
       - {label: "Content", name: "content", widget: "markdown"}
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Copyright Link", name: "copyrightLink", widget: "string"}

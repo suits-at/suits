@@ -54,7 +54,7 @@
       <div class="flex flex-wrap override-link-color">
         <div v-for="reference in references" :key="reference.title" class="w-full md:w-1/2 lg:w-1/3 mb-16 items-center text-center self-center">
           <nuxt-link :to="reference._path" class="">
-            <h3>{{ reference.title }}</h3>
+            <h2>{{ reference.title }}</h2>
             <div class="flex w-full justify-center">
               <img :src="reference.thumbnail" alt="reference.title" width="300"/>
             </div>

@@ -1,6 +1,8 @@
 {
   "title": "Über mich",
-  "content": "## DI Sebastian Ulbel\n\n*  leidenschaftlicher Web Developer\n*  begeisterter Sportler\n*  genussvoller Musikliebhaber\n*  innovationsliebender Gadgetfan\n*  wissbegieriger [Tympanus Codrops Collective](https://tympanus.net/codrops/collective/) Leser\n*  überzeugter Bitcoinbesitzer\n*  hoffnungsvoller Kickstarterkampagnenunterstützer\n\nMehr über mich und meine bisherige Laufbahn finden Sie in meinem [Lebenslauf](https://www.suits.at/files/UlbelSebastian_Lebenslauf.pdf \"Lebenslauf\").\n\nFalls Sie noch mehr über mich wissen wollen, an einer Zusammenarbeit interessiert sind oder ich Ihnen behilflich sein kann, freue ich mich, wenn Sie mit mir unter [office@suits.at](mailto:office@suits.at) Kontakt aufnehmen.",
+  "heading": "DI Sebastian Ulbel",
+  "list": "leidenschaftlicher Web Developer,begeisterter Sportler,genießender Musikliebhaber,optimistischer Klimavolksbegehrenunterstützer,innovationsliebender Gadgetfan,wissbegieriger Tympanus Codrops Collective Leser,überzeugter Bitcoinbesitzer,hoffnungsvoller Kickstarterkampagnenunterstützer",
+  "content": "Mehr über mich und meine bisherige Laufbahn finden Sie in meinem [Lebenslauf](https://www.suits.at/files/UlbelSebastian_Lebenslauf.pdf \"Lebenslauf\").\n\nFalls Sie noch mehr über mich wissen wollen, an einer Zusammenarbeit interessiert sind oder ich Ihnen behilflich sein kann, freue ich mich, wenn Sie mit mir unter [office@suits.at](mailto:office@suits.at) Kontakt aufnehmen.",
   "image": "/images/uploads/sebastian-ulbel.jpg",
   "copyrightLink": "https://fabianorner.com/",
   "copyrightText": "Fabian Orner Fotografie"
