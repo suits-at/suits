@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1>//Leistungen</h1>
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap justify-center">
       <div
         v-for="leistung in leistungen"
         :key="leistung.title"

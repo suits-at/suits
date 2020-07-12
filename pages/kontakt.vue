@@ -1,7 +1,7 @@
 <template>
-  <section class="override-link-color">
+  <section>
     <h1>//{{ title }}</h1>
-    <div class="mb-8" v-html="$md.render(content)" />
+    <div class="mb-8 max-w-4xl" v-html="$md.render(content)" />
     <div class="flex flex-wrap justify-around">
       <div class="w-full sm:w-1/3 text-center py-4">
         <font-awesome-icon :icon="['fal', iconMe]" size="3x" color="#646464" />

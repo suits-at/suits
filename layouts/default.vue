@@ -87,7 +87,7 @@
         </div>
       </header>
       <main>
-        <nuxt class="container pt-32 pb-12 min-h-screen" />
+        <nuxt class="container pt-24 sm:pt-32 pb-12 min-h-screen" />
       </main>
     </div>
     <footer>
