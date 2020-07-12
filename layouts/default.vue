@@ -4,7 +4,7 @@
       v-show="menuOpen"
       class="absolute h-screen w-screen z-50 bg-gray-100 p-4"
     >
-      <p @click="toggleMenu" class="text-right">X</p>
+      <p class="text-right" @click="toggleMenu">X</p>
       <nav @click="toggleMenu">
         <ul class="list-none text-center pl-0">
           <li class="mb-8">

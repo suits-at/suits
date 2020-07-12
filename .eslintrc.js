@@ -2,20 +2,19 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   extends: [
     '@nuxtjs/eslint-config-typescript',
     'prettier',
     'prettier/vue',
-    // 'plugin:prettier/recommended',
-    'plugin:nuxt/recommended'
+    'plugin:prettier/recommended',
+    'plugin:nuxt/recommended',
   ],
-  plugins: [
-    'prettier'
-  ],
+  plugins: ['prettier'],
   // add your custom rules here
   rules: {
-    semi: [2, "always"]
-  }
+    semi: 'off', // needs to be off in order for the next rule to properly work
+    '@typescript-eslint/semi': ['error'],
+  },
 };

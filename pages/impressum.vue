@@ -10,6 +10,6 @@ export default {
   components: {},
   async asyncData() {
     return await import('~/content/imprint/impressum.json');
-  }
+  },
 };
 </script>

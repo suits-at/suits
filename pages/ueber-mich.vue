@@ -28,15 +28,15 @@ export default {
 };
 </script>
 <style lang="scss">
-	ul {
-		list-style: none;
-    li::before {
-      content: "\2022";
-      color: #49a3df;
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-	}
+ul {
+  list-style: none;
+  li::before {
+    content: '\2022';
+    color: #49a3df;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+}
 </style>

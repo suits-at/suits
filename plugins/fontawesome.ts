@@ -1,8 +1,25 @@
 import Vue from 'vue';
 import { library, config } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faGithub, faMediumM , faXing , faTwitter , faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faMapMarkerAlt, faEnvelope, faUser, faCode, faTools, faClipboardCheck, faDatabase, faShieldCheck, faSlidersH, faAnalytics } from '@fortawesome/pro-light-svg-icons';
+import {
+  faGithub,
+  faMediumM,
+  faXing,
+  faTwitter,
+  faLinkedinIn,
+} from '@fortawesome/free-brands-svg-icons';
+import {
+  faMapMarkerAlt,
+  faEnvelope,
+  faUser,
+  faCode,
+  faTools,
+  faClipboardCheck,
+  faDatabase,
+  faShieldCheck,
+  faSlidersH,
+  faAnalytics,
+} from '@fortawesome/pro-light-svg-icons';
 
 // This is important, we are going to let Nuxt.js worry about the CSS
 config.autoAddCss = false;
