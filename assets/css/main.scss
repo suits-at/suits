@@ -44,8 +44,8 @@ header {
   transition: all 0.15s ease;
 }
 
-nav a:hover:after,
-nav a.nuxt-link-active:after {
+.main-nav a:hover:after,
+.main-nav a.nuxt-link-active:after {
   background-color: #49a3df;
 }
 
@@ -58,6 +58,7 @@ a {
 
 a {
   color: #49a3df;
+  word-break: break-word; // prevent scrolling on mobile due to long links eg. to google analytics€
 }
 
 p {
@@ -202,7 +203,7 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, a::sel
   color: $blue;
 }
 
-.svg-inline--fa{
+main .svg-inline--fa, footer .svg-inline--fa{
   transition: transform .4s ease-out;
   margin-bottom: 0.75rem;
   &:hover{

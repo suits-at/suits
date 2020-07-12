@@ -1,28 +1,34 @@
 <template>
   <div>
     <div
-      v-show="menuOpen"
+      v-if="menuOpen"
       class="absolute h-screen w-screen z-50 bg-gray-100 p-4"
+      @click="toggleMenu"
     >
-      <p class="text-right" @click="toggleMenu">X</p>
-      <nav @click="toggleMenu">
+      <p class="text-right mb-12">
+        <font-awesome-icon :icon="['fal', 'times']" size="2x" />
+      </p>
+      <nav>
         <ul class="list-none text-center pl-0">
-          <li class="mb-8">
+          <li>
             <nuxt-link to="/#referenzen/">Referenzen</nuxt-link>
           </li>
-          <li class="mb-8">
+          <li>
             <nuxt-link to="/ueber-mich/">Über mich</nuxt-link>
           </li>
-          <li class="mb-8">
+          <li>
             <nuxt-link to="/leistungen/">Leistungen</nuxt-link>
           </li>
-          <li class="mb-8">
+          <li>
             <nuxt-link to="/kontakt/">Kontakt</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/impressum/">Impressum</nuxt-link>
           </li>
         </ul>
       </nav>
     </div>
-    <div v-show="!menuOpen">
+    <div v-if="!menuOpen">
       <header class="w-full fixed z-10 top-0">
         <div class="flex flex-wrap justify-between container py-4">
           <nuxt-link to="/" class="p-0" title="Startseite" alt="Startseite">
@@ -74,15 +80,16 @@
               <nuxt-link to="/leistungen/">Leistungen</nuxt-link>
               <nuxt-link to="/kontakt/">Kontakt</nuxt-link>
             </nav>
-            <div class="block sm:hidden">
-              <span class="p-4" @click="toggleMenu">Menu</span>
-            </div>
+            <p class="sm:hidden" @click="toggleMenu">
+              <font-awesome-icon :icon="['fal', 'bars']" size="2x" />
+            </p>
           </template>
         </div>
       </header>
       <nuxt class="container pt-32 pb-12 min-h-screen" />
     </div>
-    <footer v-show="!menuOpen">
+    <footer>
+      <!-- these classes need to be on a separate div -->
       <div class="container flex flex-wrap text-center">
         <p class="w-full sm:w-1/4 my-4">
           <a href="mailto:office@suits.at">office@suits.at</a>
@@ -156,3 +163,13 @@ export default Vue.extend({
   },
 });
 </script>
+<style scoped lang="scss">
+nav {
+  li {
+    margin-bottom: 1.5rem;
+    a {
+      font-size: 2rem;
+    }
+  }
+}
+</style>

@@ -28,7 +28,7 @@ export default {
 };
 </script>
 <style lang="scss">
-ul {
+ul:not(.list-none) {
   list-style: none;
   li::before {
     content: '\2022';

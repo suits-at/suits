@@ -19,6 +19,8 @@ import {
   faShieldCheck,
   faSlidersH,
   faAnalytics,
+  faTimes,
+  faBars,
 } from '@fortawesome/pro-light-svg-icons';
 
 // This is important, we are going to let Nuxt.js worry about the CSS
@@ -42,6 +44,8 @@ library.add(faDatabase);
 library.add(faShieldCheck);
 library.add(faSlidersH);
 library.add(faAnalytics);
+library.add(faTimes);
+library.add(faBars);
 
 // Register the component globally
 Vue.component('font-awesome-icon', FontAwesomeIcon);
