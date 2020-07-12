@@ -86,7 +86,9 @@
           </template>
         </div>
       </header>
-      <nuxt class="container pt-32 pb-12 min-h-screen" />
+      <main>
+        <nuxt class="container pt-32 pb-12 min-h-screen" />
+      </main>
     </div>
     <footer>
       <!-- these classes need to be on a separate div -->
