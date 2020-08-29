@@ -24,4 +24,7 @@ module.exports = {
       'nuxt.config.js',
     ],
   },
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
 };
