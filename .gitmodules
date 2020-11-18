@@ -1,0 +1,6 @@
+[submodule "pro-light-svg-icons"]
+	path = pro-light-svg-icons
+	url = git@github.com:suits-at/pro-light-svg-icons.git
+[submodule "fontawesome-pro"]
+	path = fontawesome-pro
+	url = git@github.com:suits-at/fontawesome-pro.git
