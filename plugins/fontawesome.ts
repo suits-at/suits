@@ -21,7 +21,7 @@ import {
   faAnalytics,
   faTimes,
   faBars,
-} from '@fortawesome/pro-light-svg-icons';
+} from '../pro-light-svg-icons';
 
 // This is important, we are going to let Nuxt.js worry about the CSS
 config.autoAddCss = false;
