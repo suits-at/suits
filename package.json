@@ -33,7 +33,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "node-sass": "^5.0.0",
     "nuxt-lazy-load": "^1.2.4",
-    "prettier": "^2.2.0",
+    "prettier": "^2.2.1",
     "sass-loader": "^10.0.3",
     "vue-scrollto": "^2.19.1"
   }
