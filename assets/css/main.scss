@@ -35,7 +35,7 @@ header {
 
 .main-nav a:after {
   position: absolute;
-  top: 3rem;
+  top: 2.8rem;
   left: 1rem;
   width: 80%;
   content: '';
@@ -143,6 +143,10 @@ footer {
     color: #b1b1b1;
   }
 
+  a:hover{
+    color: white;
+  }
+
   .svg-inline--fa {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -203,7 +207,7 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, a::sel
   color: $blue;
 }
 
-main .svg-inline--fa, footer .svg-inline--fa{
+main .svg-inline--fa {
   transition: transform .4s ease-out;
   margin-bottom: 0.75rem;
   &:hover{
@@ -214,3 +218,9 @@ main .svg-inline--fa, footer .svg-inline--fa{
 .svg-inline--fa{
   cursor: pointer;
 }
+footer .svg-inline--fa {
+  &:hover{
+    color: white;
+  }
+}
+
