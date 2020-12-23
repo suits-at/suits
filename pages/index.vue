@@ -48,9 +48,7 @@
       <div id="referenzen" class="mb-4" />
     </section>
     <section>
-      <h1>
-        //Referenzen
-      </h1>
+      <h1>//Referenzen</h1>
       <div class="flex flex-wrap override-link-color">
         <div
           v-for="reference in references"
@@ -98,6 +96,16 @@ export default Vue.extend({
 
     return { references };
   },
+  head() {
+    return {
+      script: [
+        {
+          src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
+          defer: true,
+        },
+      ],
+    };
+  },
   mounted(): void {
     if (!this.$nuxt.$isServer) {
       if (this.$nuxt.context.route.fullPath === '/#referenzen/') {
@@ -116,16 +124,6 @@ export default Vue.extend({
         }
       });
     }
-  },
-  head() {
-    return {
-      script: [
-        {
-          src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
-          defer: true,
-        },
-      ],
-    };
   },
 });
 </script>
