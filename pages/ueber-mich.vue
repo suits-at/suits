@@ -27,6 +27,7 @@ export default {
   },
 };
 </script>
+<!--not scoped on purpose!-->
 <style lang="scss">
 ul:not(.list-none) {
   list-style: none;

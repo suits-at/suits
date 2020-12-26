@@ -24,6 +24,7 @@
         <div v-html="$md.render(textMail)" />
       </div>
     </div>
+    <div id="map" ref="map">Google Map is loading...</div>
   </section>
 </template>
 
@@ -33,5 +34,50 @@ export default {
   async asyncData() {
     return await import('~/content/contact/kontakt.json');
   },
+  data() {
+    let marker;
+    return {
+      marker,
+    };
+  },
+  mounted() {
+    if (typeof google === 'undefined') {
+      const script = document.createElement('script');
+      script.onload = this.initMap;
+      script.type = 'text/javascript';
+      script.src =
+        'https://maps.googleapis.com/maps/api/js?key=AIzaSyDaDYEXiTLtPbesdmgFq50XN6_MbWnRl8w';
+      document.head.appendChild(script);
+    } else {
+      this.initMap();
+    }
+  },
+  methods: {
+    initMap() {
+      const myLatLng = { lat: 48.226668, lng: 16.4225076 };
+      const mapRef = this.$refs.map;
+
+      // eslint-disable-next-line no-undef
+      const map = new google.maps.Map(mapRef, {
+        zoom: 14,
+        center: myLatLng,
+        mapTypeControl: false,
+        streetViewControl: false,
+      });
+
+      // eslint-disable-next-line no-undef
+      this.marker = new google.maps.Marker({
+        position: myLatLng,
+        map,
+        icon: '/images/uploads/suits_marker.png',
+      });
+    },
+  },
 };
 </script>
+<style lang="scss" scoped>
+#map {
+  min-height: 400px;
+  margin-bottom: 2rem;
+}
+</style>

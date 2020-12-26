@@ -165,7 +165,7 @@ export default Vue.extend({
   },
 });
 </script>
-<style scoped lang="scss">
+<style lang="scss" scoped>
 nav {
   li {
     margin-bottom: 1.5rem;
