@@ -140,12 +140,14 @@ export default {
     'vue-scrollto/nuxt',
     '@nuxtjs/markdownit',
     'nuxt-lazy-load',
-    '@nuxtjs/dotenv',
   ],
   /*
    ** Nuxt.js modules
    */
   modules: ['@nuxtjs/pwa'],
+  env: {
+    MAPS_KEY: process.env.MAPS_KEY,
+  },
   markdownit: {
     injected: true,
   },
