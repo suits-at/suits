@@ -140,6 +140,7 @@ export default {
     'vue-scrollto/nuxt',
     '@nuxtjs/markdownit',
     'nuxt-lazy-load',
+    '@nuxtjs/dotenv',
   ],
   /*
    ** Nuxt.js modules

@@ -36,8 +36,10 @@ export default {
   },
   data() {
     let marker;
+    const mapsKey = process.env.MAPS_KEY;
     return {
       marker,
+      mapsKey,
     };
   },
   mounted() {
@@ -45,8 +47,7 @@ export default {
       const script = document.createElement('script');
       script.onload = this.initMap;
       script.type = 'text/javascript';
-      script.src =
-        'https://maps.googleapis.com/maps/api/js?key=AIzaSyDaDYEXiTLtPbesdmgFq50XN6_MbWnRl8w';
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${this.mapsKey}&libraries=places`;
       document.head.appendChild(script);
     } else {
       this.initMap();
