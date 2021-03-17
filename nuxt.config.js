@@ -172,4 +172,5 @@ export default {
     // routes: dynamicRoutes,
     fallback: true,
   },
+  render: { asyncScripts: true },
 };
