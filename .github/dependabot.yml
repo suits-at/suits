@@ -1,0 +1,40 @@
+version: 2
+registries:
+  npm-registry-npm-fontawesome-com:
+    type: npm-registry
+    url: https://npm.fontawesome.com
+    token: "${{secrets.NPM_REGISTRY_NPM_FONTAWESOME_COM_TOKEN}}"
+
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "09:00"
+    timezone: Europe/Vienna
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@nuxt/typescript-build"
+    versions:
+    - 2.0.6
+  - dependency-name: "@nuxt/types"
+    versions:
+    - 2.15.2
+  - dependency-name: nuxt-lazy-load
+    versions:
+    - 1.2.5
+  - dependency-name: nuxt
+    versions:
+    - 2.15.2
+  - dependency-name: eslint-config-prettier
+    versions:
+    - 8.1.0
+  - dependency-name: eslint
+    versions:
+    - 7.19.0
+    - 7.21.0
+  - dependency-name: "@nuxtjs/markdownit"
+    versions:
+    - 2.0.0
+  registries:
+  - npm-registry-npm-fontawesome-com
