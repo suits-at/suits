@@ -67,8 +67,12 @@
         </div>
       </div>
     </header>
-    <nav v-show="menuOpen" class="mt-50" @click="toggleMenu">
-      <ul class="list-none text-center pl-0">
+    <nav
+      v-show="menuOpen"
+      class="mt-16 fixed h-full w-full bg-white z-10"
+      @click="menuOpen = false"
+    >
+      <ul class="list-none text-center pl-0" style="padding-top: 30%">
         <li>
           <nuxt-link to="/#referenzen/">Referenzen</nuxt-link>
         </li>
@@ -86,10 +90,10 @@
         </li>
       </ul>
     </nav>
-    <main v-show="!menuOpen">
+    <main>
       <nuxt class="container pt-24 sm:pt-32 pb-12 min-h-screen" />
     </main>
-    <footer v-show="!menuOpen">
+    <footer>
       <!-- these classes need to be on a separate div -->
       <div class="container flex flex-wrap text-center">
         <p class="w-full sm:w-1/4 my-4">
@@ -157,6 +161,12 @@ export default Vue.extend({
       menuOpen: false,
     };
   },
+  fetch() {
+    this.menuOpen = false;
+  },
+  watch: {
+    '$route.query': '$fetch',
+  },
   methods: {
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
@@ -165,9 +175,6 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss" scoped>
-.mt-50 {
-  margin-top: 50%;
-}
 nav {
   li {
     margin-bottom: 1.2rem;

@@ -49,12 +49,7 @@
         <h2 class="fit-text">Sebastian Ulbel IT-Solutions</h2>
         <!--      <span class="smaller">...weil nicht nur Anzüge passen müssen!</span>-->
       </div>
-      <nuxt-link
-        v-scroll-to="'#referenzen'"
-        to="#referenzen/"
-        class="more"
-        title="Referenzen"
-      />
+      <nuxt-link to="#referenzen/" class="more" title="Referenzen" />
       <div id="referenzen" class="mb-16" />
     </section>
     <section>
@@ -154,41 +149,13 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-/*Sample `apply` at-rules with Tailwind CSS*/
-/*.main {
-	@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}*/
-
 .more {
   border: inset 3rem;
   border-bottom-width: 0;
   border-color: #49a3df transparent transparent;
   border-top-style: solid;
   cursor: pointer;
-  /*content: '';*/
-  /*display: block;*/
-  /*height: 0;*/
-  /*left: 50%;*/
-  /*position: absolute;*/
-  /*transform: translateX(-50%);*/
-  /*width: 0;*/
 }
-/*.container {
-  align-items: center;
-  !*min-height: 100vh;*!
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  text-align: center;
-}*/
-
-/*.subtitle {
-	color: #526488;
-	font-size: 42px;
-	font-weight: 300;
-	padding-bottom: 15px;
-	word-spacing: 5px;
-}*/
 .fit-text {
   font-size: 18px;
   @media all and (min-width: 340px) {
