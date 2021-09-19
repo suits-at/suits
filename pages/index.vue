@@ -49,7 +49,12 @@
         <h2 class="fit-text">Sebastian Ulbel IT-Solutions</h2>
         <!--      <span class="smaller">...weil nicht nur Anzüge passen müssen!</span>-->
       </div>
-      <nuxt-link to="#referenzen/" class="more" title="Referenzen" />
+      <nuxt-link
+        v-scroll-to="'#referenzen'"
+        to="#"
+        class="more"
+        title="Referenzen"
+      />
       <div id="referenzen" class="mb-16" />
     </section>
     <section>
