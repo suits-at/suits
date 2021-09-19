@@ -137,6 +137,13 @@ export default Vue.extend({
     '$route.query': '$fetch',
   },
   mounted(): void {
+    if (!this.$nuxt.$isServer) {
+      if (this.$route.fullPath === '/#referenzen/') {
+        Vue.nextTick(() => {
+          this.$scrollTo('#referenzen');
+        });
+      }
+    }
     // @ts-ignore
     if (window.netlifyIdentity) {
       // @ts-ignore
