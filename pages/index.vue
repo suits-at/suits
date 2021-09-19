@@ -1,7 +1,15 @@
 <template>
   <div>
     <section
-      class="min-h-screen flex justify-between flex-col items-center text-center mx-auto"
+      class="
+        min-h-screen
+        flex
+        justify-between
+        flex-col
+        items-center
+        text-center
+        mx-auto
+      "
     >
       <div class="flex-1 flex flex-col justify-center">
         <svg
@@ -55,7 +63,15 @@
         <div
           v-for="reference in references"
           :key="reference.title"
-          class="w-full md:w-1/2 lg:w-1/3 mb-16 items-center text-center self-center"
+          class="
+            w-full
+            md:w-1/2
+            lg:w-1/3
+            mb-16
+            items-center
+            text-center
+            self-center
+          "
         >
           <nuxt-link :to="reference._path" class="">
             <h2 class="smaller">{{ reference.title }}</h2>
@@ -98,6 +114,15 @@ export default Vue.extend({
 
     return { references };
   },
+  fetch() {
+    if (!this.$nuxt.$isServer) {
+      if (this.$route.fullPath === '/#referenzen/') {
+        Vue.nextTick(() => {
+          this.$scrollTo('#referenzen');
+        });
+      }
+    }
+  },
   head() {
     return {
       script: [
@@ -108,12 +133,10 @@ export default Vue.extend({
       ],
     };
   },
+  watch: {
+    '$route.query': '$fetch',
+  },
   mounted(): void {
-    if (!this.$nuxt.$isServer) {
-      if (this.$nuxt.context.route.fullPath === '/#referenzen/') {
-        this.$scrollTo('#referenzen');
-      }
-    }
     // @ts-ignore
     if (window.netlifyIdentity) {
       // @ts-ignore
