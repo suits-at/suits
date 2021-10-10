@@ -1,20 +1,3 @@
-// import path from 'path';
-// import glob from 'glob';
-
-/* const dynamicRoutes = getDynamicPaths({
-  '/references': 'references/!*.json'
-});
-
-function getDynamicPaths(urlFilepathTable) {
-  return [].concat(
-    ...Object.keys(urlFilepathTable).map((url) => {
-      const filepathGlob = urlFilepathTable[url];
-      return glob
-        .sync(filepathGlob, { cwd: 'content' })
-        .map((filepath) => `${url}/${path.basename(filepath, '.json')}`);
-    })
-  );
-} */
 export default {
   target: 'static',
   /*
@@ -140,6 +123,22 @@ export default {
     'vue-scrollto/nuxt',
     '@nuxtjs/markdownit',
     'nuxt-lazy-load',
+    [
+      '@nuxtjs/robots',
+      {
+        UserAgent: '*',
+        Disallow: '/admin',
+        Sitemap: '/sitemap.xml',
+      },
+    ],
+    [
+      '@nuxtjs/sitemap',
+      {
+        hostname: 'https://www.suits.at',
+        gzip: true,
+        cacheTime: 900000,
+      },
+    ],
   ],
   /*
    ** Nuxt.js modules
@@ -169,7 +168,6 @@ export default {
     } */
   },
   generate: {
-    // routes: dynamicRoutes,
     fallback: true,
   },
   render: { asyncScripts: true },
