@@ -1,6 +1,6 @@
-# suits
+# SUITS
 
-> My breathtaking Nuxt.js project
+> My portfolio website https://www.suits.at
 
 ## Build Setup
 
