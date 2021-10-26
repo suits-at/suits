@@ -1,4 +1,7 @@
-export default {
+import { defineNuxtConfig } from '@nuxt/bridge';
+
+export default defineNuxtConfig({
+  bridge: false,
   target: 'static',
   /*
    ** Headers of the page
@@ -168,7 +171,7 @@ export default {
     } */
   },
   generate: {
-    fallback: true,
+    // fallback: true,
   },
-  render: { asyncScripts: true },
-};
+  // render: { asyncScripts: true },
+});
