@@ -1,7 +1,6 @@
 import { defineNuxtConfig } from '@nuxt/bridge';
 
 export default defineNuxtConfig({
-  bridge: false,
   target: 'static',
   /*
    ** Headers of the page
@@ -116,12 +115,11 @@ export default defineNuxtConfig({
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/fontawesome.ts'],
+  // plugins: ['~/plugins/fontawesome.ts'], TODO
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
     'vue-scrollto/nuxt',
     '@nuxtjs/markdownit',
@@ -146,7 +144,10 @@ export default defineNuxtConfig({
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa'],
+  // modules: ['@nuxtjs/pwa'], TODO
+  tailwindcss: {
+    viewer: false,
+  },
   env: {
     MAPS_KEY: process.env.MAPS_KEY,
   },

@@ -21,7 +21,6 @@
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "@nuxt/bridge": "latest",
     "@nuxt/types": "^2.15.8",
-    "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^7.0.2",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/markdownit": "^2.0.0",
