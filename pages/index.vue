@@ -1,15 +1,7 @@
 <template>
   <div>
     <section
-      class="
-        min-h-screen
-        flex
-        justify-between
-        flex-col
-        items-center
-        text-center
-        mx-auto
-      "
+      class="min-h-screen flex justify-between flex-col items-center text-center mx-auto"
     >
       <div class="flex-1 flex flex-col justify-center">
         <svg
@@ -63,23 +55,16 @@
         <div
           v-for="reference in references"
           :key="reference.title"
-          class="
-            w-full
-            md:w-1/2
-            lg:w-1/3
-            mb-16
-            items-center
-            text-center
-            self-center
-          "
+          class="w-full md:w-1/2 lg:w-1/3 mb-16 sm:mb-32 items-center text-center self-center"
         >
-          <nuxt-link :to="reference._path" class="">
-            <h2 class="smaller">{{ reference.title }}</h2>
+          <nuxt-link :to="reference._path" class="flex flex-col">
+            <h2 class="smaller flex-1 sm:px-10">{{ reference.title }}</h2>
             <div class="flex w-full justify-center">
               <img
                 :src="reference.thumbnail"
                 alt="reference.title"
                 width="300"
+                height="300"
               />
             </div>
           </nuxt-link>
