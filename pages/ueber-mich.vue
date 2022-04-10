@@ -2,7 +2,7 @@
   <section>
     <h1>//{{ title }}</h1>
     <div class="flex flex-wrap justify-center">
-      <figure class="w-full sm:w-1/3 max-w-xs mb-8">
+      <figure class="w-full sm:w-1/3 mb-8" style="max-width: 16rem">
         <img :src="image" alt="Sebastian Ulbel" title="Sebastian Ulbel" />
         <figcaption class="text-center text-sm">
           ©

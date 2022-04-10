@@ -109,22 +109,6 @@
             <font-awesome-icon :icon="['fab', 'github']" size="2x" />
           </a>
           <a
-            href="https://medium.com/@suits_at"
-            title="Medium"
-            target="_blank"
-            rel="noopener"
-          >
-            <font-awesome-icon :icon="['fab', 'medium-m']" size="2x" />
-          </a>
-          <a
-            href="https://www.xing.com/profile/Sebastian_Ulbel"
-            title="Xing"
-            target="_blank"
-            rel="noopener"
-          >
-            <font-awesome-icon :icon="['fab', 'xing']" size="2x" />
-          </a>
-          <a
             href="https://www.linkedin.com/in/suits-at/"
             title="LinkedIn"
             target="_blank"
@@ -132,9 +116,6 @@
           >
             <font-awesome-icon :icon="['fab', 'linkedin-in']" size="2x" />
           </a>
-          <!--					<a href="https://stackoverflow.com/users/4668758/suits-at?tab=profile" title="Stackoverflow" target="_blank" rel="noopener">
-						<font-awesome-icon :icon="['fab', 'stack-overflow']" size="2x"/>
-					</a>-->
           <a
             href="https://twitter.com/suits_at"
             title="Twitter"

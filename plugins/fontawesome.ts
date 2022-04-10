@@ -3,8 +3,6 @@ import { library, config } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
   faGithub,
-  faMediumM,
-  faXing,
   faTwitter,
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
@@ -29,8 +27,6 @@ config.autoAddCss = false;
 // can add other styles or just individual icons.
 // library.add(fas)
 library.add(faGithub);
-library.add(faMediumM);
-library.add(faXing);
 library.add(faTwitter);
 library.add(faLinkedinIn);
 library.add(faMapMarkerAlt);

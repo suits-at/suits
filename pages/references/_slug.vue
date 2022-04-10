@@ -2,9 +2,10 @@
   <section>
     <h1 class="leading-none break-words">{{ title }}</h1>
     <p>Datum: {{ date }}</p>
-    <p>
+    <p v-if="url.startsWith('http')">
       Website: <a class="break-words" :href="url" target="_blank">{{ url }}</a>
     </p>
+    <p v-else>{{ url }}</p>
     <img :src="screenshot" :alt="title" :title="title" class="mb-8" />
     <nuxt-link to="/#referenzen/" class="custom-link"
       >zurück zu den Referenzen</nuxt-link
