@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="w-full fixed z-10 top-0">
-      <div class="flex justify-between container py-2">
+      <div class="flex justify-between container pb-2 pt-2 sm:pt-4">
         <nuxt-link to="/" class="p-0" title="Startseite" alt="Startseite">
           <svg
             class="inline"
