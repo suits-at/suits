@@ -1,3 +1,4 @@
+/*
 import Vue from 'vue';
 import { library, config } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -43,3 +44,4 @@ library.add(faTimes);
 
 // Register the component globally
 Vue.component('FontAwesomeIcon', FontAwesomeIcon);
+*/

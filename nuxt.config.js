@@ -1,8 +1,15 @@
-export default {
+import { defineNuxtConfig } from 'nuxt';
+
+export default defineNuxtConfig({
+  builder: 'webpack',
+});
+
+/* export default defineNuxtConfig({
+  builder: 'webpack',
   target: 'static',
-  /*
+  /!*
    ** Headers of the page
-   */
+   *!/
   head: {
     title: 'SUITS',
     meta: [
@@ -99,30 +106,29 @@ export default {
       // {rel:"manifest", href:"/manifest.json"}
     ],
   },
-  /*
+  /!*
    ** Customize the progress-bar color
-   */
+   *!/
   loading: { color: '#fff' },
-  /*
+  /!*
    ** Global CSS
-   */
+   *!/
   css: [
-    '@fortawesome/fontawesome-svg-core/styles.css',
-    '~/assets/css/main.scss',
+    // '@fortawesome/fontawesome-svg-core/styles.css',
+    // '~/assets/css/main.scss',
   ],
-  /*
+  /!*
    ** Plugins to load before mounting the App
-   */
-  plugins: ['~/plugins/fontawesome.ts'],
-  /*
+   *!/
+  // plugins: ['~/plugins/fontawesome.ts'],
+  /!*
    ** Nuxt.js dev-modules
-   */
-  buildModules: [
-    '@nuxt/typescript-build',
-    '@nuxtjs/tailwindcss',
-    'vue-scrollto/nuxt',
-    '@nuxtjs/markdownit',
-    'nuxt-lazy-load',
+   *!/
+  modules: [
+    // '@nuxtjs/tailwindcss',
+    // 'vue-scrollto/nuxt',
+    // '@nuxtjs/markdownit',
+    // 'nuxt-lazy-load',
     [
       '@nuxtjs/robots',
       {
@@ -140,35 +146,34 @@ export default {
       },
     ],
   ],
-  /*
+  /!*
    ** Nuxt.js modules
-   */
-  modules: ['@nuxtjs/pwa'],
+   *!/
   env: {
     MAPS_KEY: process.env.MAPS_KEY,
   },
-  markdownit: {
+  /!*  markdownit: {
     injected: true,
-  },
+  }, *!/
   purgeCSS: {
-    whitelistPatterns: [/svg.*/, /fa.*/],
+    whitelistPatterns: [/svg.*!/, /fa.*!/],
   },
-  /*
+  /!*
    ** Build configuration
-   */
+   *!/
   build: {
-    /*
+    /!*
      ** You can extend webpack config here
-     */
-    /*    extend (config, ctx) {
+     *!/
+    /!*    extend (config, ctx) {
       if (ctx && ctx.isClient) {
          config.optimization.splitChunks.chunks = 'all';
          config.optimization.splitChunks.maxSize = 102400;
       }
-    } */
+    } *!/
   },
   generate: {
     fallback: true,
   },
   render: { asyncScripts: true },
-};
+}); */

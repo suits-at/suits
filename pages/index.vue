@@ -76,9 +76,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import VueScrollTo from 'vue-scrollto';
-
-Vue.use(VueScrollTo);
+// import VueScrollTo from 'vue-scrollto';
+// Vue.use(VueScrollTo);
 
 export default Vue.extend({
   components: {},
