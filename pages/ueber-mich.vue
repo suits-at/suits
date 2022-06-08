@@ -2,14 +2,8 @@
   <section>
     <h1>//{{ title }}</h1>
     <div class="flex flex-wrap justify-center">
-      <figure class="w-full sm:w-1/3 mb-8" style="max-width: 16rem">
+      <figure class="w-full sm:w-1/3" style="max-width: 24rem">
         <img :src="image" alt="Sebastian Ulbel" title="Sebastian Ulbel" />
-        <figcaption class="text-center text-sm">
-          ©
-          <a class="text-xs" :href="copyrightLink" target="_blank">{{
-            copyrightText
-          }}</a>
-        </figcaption>
       </figure>
       <div
         class="w-full sm:w-1/2 sm:ml-8 lg:ml-24 max-w-2xl sm:-mt-4"
