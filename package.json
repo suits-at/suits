@@ -16,8 +16,8 @@
     "nuxt": "^2.15.8"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "1.2.36",
-    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/fontawesome-svg-core": "6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/vue-fontawesome": "^2.0.6",
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
@@ -26,8 +26,8 @@
     "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/sitemap": "^2.4.0",
-    "@nuxtjs/tailwindcss": "^4.2.1",
-    "@types/webpack-env": "^1.16.3",
+    "@nuxtjs/tailwindcss": "^5.1.2",
+    "@types/webpack-env": "^1.17.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.3.0",

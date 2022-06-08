@@ -171,4 +171,5 @@ export default {
     fallback: true,
   },
   render: { asyncScripts: true },
+  devServerHandlers: [],
 };
