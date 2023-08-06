@@ -58,7 +58,6 @@ export default {
       const myLatLng = { lat: 48.226668, lng: 16.4225076 };
       const mapRef = this.$refs.map;
 
-      // eslint-disable-next-line no-undef
       const map = new google.maps.Map(mapRef, {
         zoom: 14,
         center: myLatLng,
@@ -66,7 +65,6 @@ export default {
         streetViewControl: false,
       });
 
-      // eslint-disable-next-line no-undef
       this.marker = new google.maps.Marker({
         position: myLatLng,
         map,

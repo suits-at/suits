@@ -11,7 +11,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
+        content: 'Portfolio Website from and about SUITS.',
       },
       { name: 'msapplication-TileColor', content: '#ffffff' },
       { name: 'msapplication-TileImage', content: '/ms-icon-144x144.png' },
@@ -123,14 +123,6 @@ export default {
     'vue-scrollto/nuxt',
     '@nuxtjs/markdownit',
     'nuxt-lazy-load',
-    [
-      '@nuxtjs/robots',
-      {
-        UserAgent: '*',
-        Disallow: '/admin',
-        Sitemap: '/sitemap.xml',
-      },
-    ],
     [
       '@nuxtjs/sitemap',
       {

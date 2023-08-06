@@ -56,7 +56,6 @@
             :class="{ 'is-active': menuOpen }"
             type="button"
             aria-label="Menu"
-            aria-controls="site-navigation"
             role="button"
             @click="toggleMenu"
           >
