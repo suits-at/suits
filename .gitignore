@@ -91,3 +91,6 @@ sw.*
 
 # npmrc
 .npmrc
+
+# nitro build folder
+.output

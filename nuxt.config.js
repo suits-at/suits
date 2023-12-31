@@ -1,4 +1,11 @@
-export default {
+import { defineNuxtConfig } from '@nuxt/bridge';
+
+export default defineNuxtConfig({
+  // bridge: false,
+  bridge: {
+    typescript: true,
+    nitro: true
+  },
   target: 'static',
   /*
    ** Headers of the page
@@ -118,7 +125,6 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
     'vue-scrollto/nuxt',
     '@nuxtjs/markdownit',
@@ -172,4 +178,4 @@ export default {
   },
   render: { asyncScripts: true },
   devServerHandlers: [],
-};
+});
