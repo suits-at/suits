@@ -18,7 +18,10 @@ import {
   faSlidersH,
   faAnalytics,
   faTimes,
-} from '../pro-light-svg-icons';
+  faStopwatch,
+  faRepeat,
+  faPen
+} from "../pro-light-svg-icons";
 
 // This is important, we are going to let Nuxt.js worry about the CSS
 config.autoAddCss = false;
@@ -40,6 +43,9 @@ library.add(faShieldCheck);
 library.add(faSlidersH);
 library.add(faAnalytics);
 library.add(faTimes);
+library.add(faStopwatch);
+library.add(faRepeat);
+library.add(faPen);
 
 // Register the component globally
 Vue.component('FontAwesomeIcon', FontAwesomeIcon);
