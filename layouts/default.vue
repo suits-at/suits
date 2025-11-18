@@ -2,7 +2,7 @@
   <div>
     <header class="w-full fixed z-10 top-0">
       <div class="flex justify-between container pb-2 pt-2 sm:pt-4">
-        <nuxt-link to="/" class="p-0" title="Startseite" alt="Startseite">
+        <NuxtLink to="/" class="p-0" title="Startseite" alt="Startseite">
           <svg
             class="inline"
             xmlns="http://www.w3.org/2000/svg"
@@ -43,13 +43,13 @@
               d="M737.6 100.7c-9-12.2-20.5-19.9-36.3-19.9 -15.1 0-29.5 11.6-29.5 27.3 0 40.8 95.9 23.7 95.9 104.9 0 48.5-30.2 82.8-79.6 82.8 -33.4 0-57.8-19.3-74.4-47.2l30.5-29.8c6.4 18.6 23.4 35.3 43.6 35.3 19.3 0 31.1-16.4 31.1-35 0-25-23.1-32.1-42-39.5 -31.1-12.8-53.9-28.6-53.9-66.1 0-40.1 29.8-72.5 70.6-72.5 21.5 0 51.3 10.6 66.1 27L737.6 100.7z"
             />
           </svg>
-        </nuxt-link>
+        </NuxtLink>
         <div>
           <nav class="hidden lg:block main-nav">
-            <nuxt-link to="/#referenzen/">Referenzen</nuxt-link>
-            <nuxt-link to="/ueber-mich/">Über mich</nuxt-link>
-            <nuxt-link to="/leistungen/">Leistungen</nuxt-link>
-            <nuxt-link to="/kontakt/">Kontakt</nuxt-link>
+            <NuxtLink to="/#referenzen/">Referenzen</NuxtLink>
+            <NuxtLink to="/ueber-mich/">Über mich</NuxtLink>
+            <NuxtLink to="/leistungen/">Leistungen</NuxtLink>
+            <NuxtLink to="/kontakt/">Kontakt</NuxtLink>
           </nav>
           <button
             class="hamburger hamburger--spin"
@@ -73,24 +73,24 @@
     >
       <ul class="list-none text-center pl-0" style="padding-top: 30%">
         <li>
-          <nuxt-link to="/#referenzen/">Referenzen</nuxt-link>
+          <NuxtLink to="/#referenzen/">Referenzen</NuxtLink>
         </li>
         <li>
-          <nuxt-link to="/ueber-mich/">Über mich</nuxt-link>
+          <NuxtLink to="/ueber-mich/">Über mich</NuxtLink>
         </li>
         <li>
-          <nuxt-link to="/leistungen/">Leistungen</nuxt-link>
+          <NuxtLink to="/leistungen/">Leistungen</NuxtLink>
         </li>
         <li>
-          <nuxt-link to="/kontakt/">Kontakt</nuxt-link>
+          <NuxtLink to="/kontakt/">Kontakt</NuxtLink>
         </li>
         <li>
-          <nuxt-link to="/impressum/">Impressum</nuxt-link>
+          <NuxtLink to="/impressum/">Impressum</NuxtLink>
         </li>
       </ul>
     </nav>
     <main>
-      <nuxt class="container pt-24 sm:pt-32 pb-12 min-h-screen" />
+      <NuxtPage class="container pt-24 sm:pt-32 pb-12 min-h-screen" />
     </main>
     <footer>
       <!-- these classes need to be on a separate div -->
@@ -131,29 +131,21 @@
     </footer>
   </div>
 </template>
-<script lang="ts">
-import Vue from 'vue';
 
-export default Vue.extend({
-  components: {},
-  data() {
-    return {
-      menuOpen: false,
-    };
-  },
-  fetch() {
-    this.menuOpen = false;
-  },
-  watch: {
-    '$route.query': '$fetch',
-  },
-  methods: {
-    toggleMenu() {
-      this.menuOpen = !this.menuOpen;
-    },
-  },
-});
+<script setup lang="ts">
+const route = useRoute()
+const menuOpen = ref(false)
+
+function toggleMenu() {
+  menuOpen.value = !menuOpen.value
+}
+
+// Close menu when route changes
+watch(() => route.fullPath, () => {
+  menuOpen.value = false
+})
 </script>
+
 <style lang="scss" scoped>
 nav {
   li {
@@ -163,7 +155,7 @@ nav {
       font-size: 1.7rem;
       color: rgba(48, 48, 48, 0.4);
 
-      &.nuxt-link-active {
+      &.router-link-active {
         color: #646464;
       }
 
@@ -178,7 +170,7 @@ nav {
         transition: all 0.15s ease;
       }
 
-      &.nuxt-link-active:after {
+      &.router-link-active:after {
         background-color: #49a3df;
       }
     }

@@ -41,9 +41,8 @@
         <h2 class="fit-text">Sebastian Ulbel IT-Solutions</h2>
         <!--      <span class="smaller">...weil nicht nur Anzüge passen müssen!</span>-->
       </div>
-      <nuxt-link
-        v-scroll-to="'#referenzen'"
-        to="#"
+      <a
+        href="#referenzen"
         class="more"
         title="Referenzen"
       />
@@ -54,95 +53,66 @@
       <div class="flex flex-wrap override-link-color">
         <div
           v-for="reference in references"
-          :key="reference.title"
+          :key="reference._path"
           class="w-full md:w-1/2 lg:w-1/3 mb-16 sm:mb-32 items-center text-center self-center"
         >
-          <nuxt-link :to="reference._path" class="flex flex-col">
+          <NuxtLink :to="reference._path" class="flex flex-col">
             <h2 class="smaller flex-1 sm:px-10">{{ reference.title }}</h2>
             <div class="flex w-full justify-center">
               <img
                 :src="reference.thumbnail"
-                alt="reference.title"
+                :alt="reference.title"
                 width="300"
                 height="300"
               />
             </div>
-          </nuxt-link>
+          </NuxtLink>
         </div>
       </div>
     </section>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-import VueScrollTo from 'vue-scrollto';
+<script setup lang="ts">
+useHead({
+  script: [
+    {
+      src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
+      defer: true,
+    },
+  ],
+})
 
-Vue.use(VueScrollTo);
+const route = useRoute()
 
-export default Vue.extend({
-  components: {},
-  data() {
-    // Using webpacks context to gather all files from a folder
-    const referencesCTX = require.context(
-      '~/content/references/',
-      false,
-      /\.json$/
-    );
+// Query content from the content directory
+const { data: references } = await useAsyncData('references', () =>
+  queryContent('/references')
+    .sort({ date: -1 })
+    .find()
+)
 
-    const references = referencesCTX.keys().map((key: string) => ({
-      ...referencesCTX(key),
-      _path: `/references/${key.replace('.json', '').replace('./', '')}`,
-    }));
-
-    references.sort((a, b) => parseFloat(b.date) - parseFloat(a.date));
-
-    return { references };
-  },
-  fetch() {
-    if (!this.$nuxt.$isServer) {
-      if (this.$route.fullPath === '/#referenzen/') {
-        Vue.nextTick(() => {
-          this.$scrollTo('#referenzen');
-        });
+onMounted(() => {
+  if (route.fullPath === '/#referenzen/' || route.hash === '#referenzen') {
+    nextTick(() => {
+      const element = document.getElementById('referenzen')
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
       }
-    }
-  },
-  head() {
-    return {
-      script: [
-        {
-          src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
-          defer: true,
-        },
-      ],
-    };
-  },
-  watch: {
-    '$route.query': '$fetch',
-  },
-  mounted(): void {
-    if (!this.$nuxt.$isServer) {
-      if (this.$route.fullPath === '/#referenzen/') {
-        Vue.nextTick(() => {
-          this.$scrollTo('#referenzen');
-        });
+    })
+  }
+
+  // Netlify Identity
+  if (typeof window !== 'undefined' && (window as any).netlifyIdentity) {
+    (window as any).netlifyIdentity.on('init', (user: any) => {
+      if (!user) {
+        (window as any).netlifyIdentity.on('login', () => {
+          window.location.href = '/admin/'
+        })
       }
-    }
-    // @ts-ignore
-    if (window.netlifyIdentity) {
-      // @ts-ignore
-      window.netlifyIdentity.on('init', (user: any) => {
-        if (!user) {
-          // @ts-ignore
-          window.netlifyIdentity.on('login', () => {
-            document.location.href = '/admin/';
-          });
-        }
-      });
-    }
-  },
-});
+    })
+  }
+})
 </script>
 
 <style lang="scss" scoped>

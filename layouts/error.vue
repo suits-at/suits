@@ -7,11 +7,7 @@
     </p>
   </main>
 </template>
-<script lang="ts">
-import Vue from 'vue';
 
-export default Vue.extend({
-  components: {},
-  layout: 'error',
-});
+<script setup lang="ts">
+// Error page for Nuxt 3
 </script>

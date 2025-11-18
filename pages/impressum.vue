@@ -1,15 +1,12 @@
 <template>
   <div>
-    <h1>//{{ title }}</h1>
-    <div v-html="$md.render(content)" />
+    <h1>//{{ imprintData?.title }}</h1>
+    <div v-html="imprintData?.content" />
   </div>
 </template>
 
-<script>
-export default {
-  components: {},
-  async asyncData() {
-    return await import('~/content/imprint/impressum.json');
-  },
-};
+<script setup lang="ts">
+const { data: imprintData } = await useAsyncData('imprint', () =>
+  queryContent('/imprint/impressum').findOne()
+)
 </script>
