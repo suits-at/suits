@@ -1,13 +1,4 @@
-export type Reference = {
-  id: string
-  title: string
-  url: string
-  date: string
-  screenshot: string
-  thumbnail: string
-}
-
-export const references: Reference[] = [
+export const references = [
   {
     id: "isopox",
     title: "Isopox KG",
@@ -240,4 +231,7 @@ export const references: Reference[] = [
     screenshot: "/images/uploads/screenshot/doris_mayer.jpg",
     thumbnail: "/images/uploads/thumbnail/doris_mayer.jpg",
   },
-]
+] as const
+
+export type Reference = (typeof references)[number]
+export type ReferenceId = Reference["id"]

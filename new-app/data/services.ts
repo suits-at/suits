@@ -1,11 +1,4 @@
-export type Service = {
-  id: string
-  title: string
-  icon: string
-  description: string
-}
-
-export const services: Service[] = [
+export const services = [
   {
     id: "development",
     title: "Webentwicklung",
@@ -68,4 +61,7 @@ export const services: Service[] = [
     description:
       "Sie möchten den Erfolg Ihrer Website prüfen? Nach der datenschutzkonformen Integration von Google Analytics ist dies ein Leichtes.",
   },
-]
+] as const
+
+export type Service = (typeof services)[number]
+export type ServiceId = Service["id"]
