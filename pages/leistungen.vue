@@ -9,7 +9,7 @@
       >
         <font-awesome-icon
           v-if="leistung.icon"
-          :icon="['fal', `${leistung.icon}`]"
+          :icon="['fas', getIconName(leistung.icon)]"
           size="5x"
           color="#646464"
         />
@@ -21,9 +21,21 @@
 </template>
 
 <script setup lang="ts">
+import type { Service } from '~/types/content'
+
+// Map pro icon names to free icon names
+const iconMap: Record<string, string> = {
+  'analytics': 'chart-line',
+  'shield-check': 'shield-alt',
+}
+
+function getIconName(icon: string): string {
+  return iconMap[icon] || icon
+}
+
 // Query content from the content directory
 const { data: leistungen } = await useAsyncData('services', () =>
-  queryContent('/services')
+  queryContent<Service>('/services')
     .find()
 )
 </script>

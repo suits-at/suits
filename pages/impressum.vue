@@ -6,7 +6,9 @@
 </template>
 
 <script setup lang="ts">
+import type { ImprintContent } from '~/types/content'
+
 const { data: imprintData } = await useAsyncData('imprint', () =>
-  queryContent('/imprint/impressum').findOne()
+  queryContent<ImprintContent>('/imprint/impressum').findOne()
 )
 </script>

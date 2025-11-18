@@ -14,8 +14,10 @@
 </template>
 
 <script setup lang="ts">
+import type { AboutContent } from '~/types/content'
+
 const { data: aboutData } = await useAsyncData('about', () =>
-  queryContent('/about/ueber-mich').findOne()
+  queryContent<AboutContent>('/about/ueber-mich').findOne()
 )
 </script>
 

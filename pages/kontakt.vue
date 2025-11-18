@@ -4,13 +4,13 @@
     <div class="mb-8 max-w-4xl" v-html="kontaktData?.content" />
     <div class="flex flex-wrap">
       <div class="w-full sm:w-1/3 text-center my-4">
-        <font-awesome-icon v-if="kontaktData?.iconMe" :icon="['fal', kontaktData.iconMe]" size="3x" color="#646464" />
+        <font-awesome-icon v-if="kontaktData?.iconMe" :icon="['fas', kontaktData.iconMe]" size="3x" color="#646464" />
         <div v-html="kontaktData?.textMe" />
       </div>
       <div class="w-full sm:w-1/3 text-center py-4">
         <font-awesome-icon
           v-if="kontaktData?.iconLocation"
-          :icon="['fal', kontaktData.iconLocation]"
+          :icon="['fas', kontaktData.iconLocation]"
           size="3x"
           color="#646464"
         />
@@ -19,7 +19,7 @@
       <div class="w-full sm:w-1/3 text-center py-4">
         <font-awesome-icon
           v-if="kontaktData?.iconMail"
-          :icon="['fal', kontaktData.iconMail]"
+          :icon="['fas', kontaktData.iconMail]"
           size="3x"
           color="#646464"
         />
@@ -31,6 +31,8 @@
 </template>
 
 <script setup lang="ts">
+import type { ContactContent } from '~/types/content'
+
 const config = useRuntimeConfig()
 const mapsKey = config.public.mapsKey
 
@@ -38,7 +40,7 @@ const mapElement = ref<HTMLElement>()
 const marker = ref()
 
 const { data: kontaktData } = await useAsyncData('contact', () =>
-  queryContent('/contact/kontakt').findOne()
+  queryContent<ContactContent>('/contact/kontakt').findOne()
 )
 
 onMounted(() => {

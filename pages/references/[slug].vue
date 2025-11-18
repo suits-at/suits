@@ -14,11 +14,13 @@
 </template>
 
 <script setup lang="ts">
+import type { Reference } from '~/types/content'
+
 const route = useRoute()
 const slug = route.params.slug
 
 const { data: reference } = await useAsyncData(`reference-${slug}`, () =>
-  queryContent(`/references/${slug}`).findOne()
+  queryContent<Reference>(`/references/${slug}`).findOne()
 )
 </script>
 

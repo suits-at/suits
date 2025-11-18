@@ -74,6 +74,8 @@
 </template>
 
 <script setup lang="ts">
+import type { Reference } from '~/types/content'
+
 useHead({
   script: [
     {
@@ -87,7 +89,7 @@ const route = useRoute()
 
 // Query content from the content directory
 const { data: references } = await useAsyncData('references', () =>
-  queryContent('/references')
+  queryContent<Reference>('/references')
     .sort({ date: -1 })
     .find()
 )
