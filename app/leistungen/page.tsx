@@ -33,7 +33,7 @@ export default function LeistungenPage() {
         {services.map((service) => {
           const IconComponent = iconMap[service.icon] || Code
           return (
-            <div key={service.id} className="w-full sm:w-1/2 lg:w-1/3 px-8 py-8 text-center group">
+            <div key={service.id} className="w-full sm:w-1/3 px-8 py-4 text-center group">
               <div className="flex flex-col items-center">
                 <IconComponent
                   className="h-20 w-20 mb-6 text-foreground/70 group-hover:text-primary transition-colors"

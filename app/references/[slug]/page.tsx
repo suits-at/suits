@@ -42,7 +42,7 @@ export default async function ReferencePage({ params }: PageProps) {
   return (
     <section>
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 break-words leading-tight">
-        {reference.title}
+        //{reference.title}
       </h1>
       <p className="text-lg text-muted-foreground mb-4">Datum: {reference.date}</p>
       {isExternalUrl ? (
