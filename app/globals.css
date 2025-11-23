@@ -78,3 +78,13 @@
     --color-ring: oklch(0.7 0.18 231);
   }
 }
+
+/* Letter-spacing for headings to match original design */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0.04em;
+}

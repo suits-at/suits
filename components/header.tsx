@@ -61,7 +61,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-base hover:text-primary transition-colors"
+                  className="text-base relative hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-150 hover:after:w-full"
                 >
                   {link.label}
                 </Link>
@@ -84,7 +84,7 @@ export function Header() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-background/95 backdrop-blur pt-20"
+          className="fixed inset-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur pt-20"
           onClick={() => setMobileMenuOpen(false)}
         >
           <nav className="flex flex-col items-center justify-center h-full">
