@@ -1,0 +1,13 @@
+---
+import { icons, type IconProps } from '@lucide/astro';
+
+interface Props extends IconProps {
+  name: keyof typeof icons;
+  label?: string;
+}
+
+const { name, label, ...props } = Astro.props;
+const Icon = icons[name];
+---
+
+<Icon aria-hidden={label ? undefined : 'true'} aria-label={label} {...props} />

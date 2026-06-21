@@ -1,0 +1,25 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { about } from '@/data/profile';
+import { renderMarkdown } from '@/lib/markdown';
+import aboutContent from '@/content/pages/about.md?raw';
+---
+
+<BaseLayout title={about.title}>
+  <section class="section">
+    <h1 class="section-title">{about.title}</h1>
+    <div
+      class="grid gap-8 sm:grid-cols-[minmax(14rem,24rem)_minmax(0,42rem)] sm:items-start lg:gap-24"
+    >
+      <figure>
+        <img
+          src={about.image}
+          alt="Sebastian Ulbel"
+          title="Sebastian Ulbel"
+          class="w-full max-w-96"
+        />
+      </figure>
+      <div class="content sm:-mt-4" set:html={renderMarkdown(aboutContent)} />
+    </div>
+  </section>
+</BaseLayout>

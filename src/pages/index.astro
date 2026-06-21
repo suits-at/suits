@@ -1,0 +1,52 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SuitsLogo from '@/components/SuitsLogo.astro';
+import Icon from '@/components/Icon.astro';
+import { projects } from '@/data/projects';
+---
+
+<BaseLayout>
+  <section
+    class="container flex min-h-[calc(100svh-8rem)] flex-col items-center justify-between pb-16 text-center"
+  >
+    <div class="flex flex-1 flex-col items-center justify-center">
+      <SuitsLogo class="mb-4 w-full max-w-3xl text-suits-gray" />
+      <h1
+        class="text-[18px] font-bold leading-tight text-suits-gray min-[340px]:text-[22px] min-[450px]:text-[40px]"
+      >
+        Sebastian Ulbel IT-Solutions
+      </h1>
+    </div>
+    <a
+      href="#referenzen"
+      class="text-suits-blue"
+      aria-label="Zu den Referenzen"
+    >
+      <Icon name="ChevronDown" size={76} stroke-width={1.5} />
+    </a>
+  </section>
+
+  <section id="referenzen" class="section scroll-mt-24">
+    <h2 class="section-title">Referenzen</h2>
+    <div
+      class="grid gap-x-8 gap-y-16 sm:grid-cols-2 sm:gap-y-24 lg:grid-cols-3"
+    >
+      {
+        projects.map((project) => (
+          <a href={`/references/${project.slug}/`} class="reference-link">
+            <h2>{project.title}</h2>
+            <img
+              src={project.thumbnail}
+              alt={`Thumbnail von ${project.title}`}
+              width="300"
+              height="300"
+              loading="lazy"
+              decoding="async"
+              class="aspect-square w-[300px] object-contain"
+            />
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

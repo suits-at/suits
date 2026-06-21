@@ -1,0 +1,47 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { projects } from '@/data/projects';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const hasWebsite = project.url.startsWith('http');
+---
+
+<BaseLayout
+  title={project.title}
+  description={`Referenzprojekt ${project.title} von SUITS.`}
+>
+  <section class="section">
+    <h1 class="section-title">{project.title}</h1>
+    <p class="mb-6 text-[20px]">Datum: {project.date}</p>
+    {
+      hasWebsite ? (
+        <p class="mb-6 text-[20px]">
+          Website:{' '}
+          <a href={project.url} target="_blank" rel="noopener">
+            {project.url}
+          </a>
+        </p>
+      ) : (
+        <p class="mb-6 text-[20px]">{project.url}</p>
+      )
+    }
+    <img
+      src={project.screenshot}
+      alt={`Screenshot von ${project.title}`}
+      title={project.title}
+      class="mb-8 w-full"
+      loading="eager"
+      decoding="async"
+    />
+    <a href="/#referenzen" class="text-suits-gray hover:underline"
+      >zurück zu den Referenzen</a
+    >
+  </section>
+</BaseLayout>

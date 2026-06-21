@@ -1,0 +1,48 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Icon from '@/components/Icon.astro';
+import { services } from '@/data/services';
+import { renderMarkdown } from '@/lib/markdown';
+
+const serviceIcons = {
+  code: 'Code',
+  'clipboard-check': 'ClipboardCheck',
+  'sliders-h': 'SlidersHorizontal',
+  stopwatch: 'Timer',
+  repeat: 'Repeat2',
+  database: 'Database',
+  tools: 'Wrench',
+  'shield-check': 'ShieldCheck',
+  analytics: 'ChartColumn',
+} as const;
+---
+
+<BaseLayout title="Leistungen">
+  <section class="section">
+    <h1 class="section-title">Leistungen</h1>
+    <div class="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        services.map((service) => (
+          <article class="text-center">
+            <Icon
+              name={
+                serviceIcons[service.icon as keyof typeof serviceIcons] ??
+                'Circle'
+              }
+              size={72}
+              stroke-width={1.35}
+              class="mx-auto mb-4 text-suits-gray transition-transform duration-300 hover:scale-110 hover:text-suits-blue"
+            />
+            <h2 class="mb-4 text-[24px] font-bold leading-tight sm:text-[40px]">
+              {service.title}
+            </h2>
+            <div
+              class="content"
+              set:html={renderMarkdown(service.description)}
+            />
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

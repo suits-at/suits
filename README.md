@@ -1,22 +1,30 @@
-# SUITS
+# SUITS Portfolio
 
-> My portfolio website https://www.suits.at
+Astro-powered portfolio website for [suits.at](https://www.suits.at/).
 
-## Build Setup
+## Commands
 
 ```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+npm run dev
+npm run build
+npm run preview
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Content
+
+- Projects: `src/data/projects.ts`
+- Services: `src/data/services.ts`
+- About/contact copy: `src/content/pages`
+- Imprint/privacy copy: `src/content/legal/impressum.md`
+
+## Adding a Project
+
+```bash
+npm run add-project -- --url https://example.com --title "Project Title" --date 2026
+```
+
+The script captures a screenshot, creates a thumbnail, stores both under `public/images/projects`, and inserts the project into `src/data/projects.ts`.
+
+## Map
+
+Set `PUBLIC_GOOGLE_MAPS_API_KEY` on Netlify to render Google Static Maps. Without it, the contact page shows a visible missing-key warning.

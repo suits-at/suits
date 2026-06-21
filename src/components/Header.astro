@@ -1,0 +1,78 @@
+---
+import Icon from '@/components/Icon.astro';
+import SuitsLogo from '@/components/SuitsLogo.astro';
+
+const pathname = Astro.url.pathname;
+const navItems = [
+  { href: '/#referenzen', label: 'Referenzen', section: true },
+  { href: '/ueber-mich/', label: 'Über mich' },
+  { href: '/leistungen/', label: 'Leistungen' },
+  { href: '/kontakt/', label: 'Kontakt' },
+];
+---
+
+<header class="site-header">
+  <div class="container flex items-center justify-between py-3 sm:py-4">
+    <a href="/" class="logo-link" aria-label="Startseite">
+      <SuitsLogo class="h-10 w-[103px] sm:h-12 sm:w-[124px]" />
+    </a>
+
+    <nav class="main-nav hidden lg:flex" aria-label="Hauptnavigation">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[!item.section && pathname === item.href && 'active']}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <button
+      id="menu-toggle"
+      class="icon-button lg:hidden"
+      type="button"
+      aria-label="Menü öffnen"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+    >
+      <Icon name="Menu" size={34} stroke-width={2.2} class="menu-open" />
+      <Icon name="X" size={34} stroke-width={2.2} class="menu-close hidden" />
+    </button>
+  </div>
+
+  <nav
+    id="mobile-menu"
+    class="mobile-menu hidden lg:hidden"
+    aria-label="Mobile Navigation"
+  >
+    <a href="/#referenzen">Referenzen</a>
+    <a href="/ueber-mich/">Über mich</a>
+    <a href="/leistungen/">Leistungen</a>
+    <a href="/kontakt/">Kontakt</a>
+    <a href="/impressum/">Impressum</a>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('#menu-toggle');
+  const menu = document.querySelector<HTMLElement>('#mobile-menu');
+  const openIcon = document.querySelector<SVGElement>('.menu-open');
+  const closeIcon = document.querySelector<SVGElement>('.menu-close');
+
+  function setMenu(open: boolean) {
+    menu?.classList.toggle('hidden', !open);
+    openIcon?.classList.toggle('hidden', open);
+    closeIcon?.classList.toggle('hidden', !open);
+    toggle?.setAttribute('aria-expanded', String(open));
+    toggle?.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+  }
+
+  toggle?.addEventListener('click', () => {
+    setMenu(menu?.classList.contains('hidden') ?? true);
+  });
+
+  menu?.addEventListener('click', () => setMenu(false));
+</script>

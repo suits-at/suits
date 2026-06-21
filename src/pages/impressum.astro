@@ -1,0 +1,12 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { renderMarkdown } from '@/lib/markdown';
+import imprintContent from '@/content/legal/impressum.md?raw';
+---
+
+<BaseLayout title="Impressum & Datenschutz">
+  <section class="section">
+    <h1 class="section-title">Impressum & Datenschutz</h1>
+    <div class="content max-w-4xl" set:html={renderMarkdown(imprintContent)} />
+  </section>
+</BaseLayout>

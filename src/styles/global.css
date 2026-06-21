@@ -1,0 +1,193 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans:
+    'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --color-suits-blue: #49a3df;
+  --color-suits-gray: #646464;
+  --color-suits-charcoal: #2e2e2e;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('/fonts/work-sans-v7-latin-regular.woff2') format('woff2'),
+    url('/fonts/work-sans-v7-latin-regular.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url('/fonts/work-sans-v7-latin-700.woff2') format('woff2'),
+    url('/fonts/work-sans-v7-latin-700.woff') format('woff');
+}
+
+@layer base {
+  html {
+    @apply bg-white font-sans text-suits-gray antialiased;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    @apply min-h-screen;
+  }
+
+  ::selection {
+    @apply text-suits-blue;
+  }
+
+  a {
+    @apply text-suits-blue transition-colors duration-150;
+    word-break: break-word;
+  }
+
+  img {
+    @apply h-auto max-w-full;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    letter-spacing: 0;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  .site-header {
+    @apply fixed top-0 z-20 w-full bg-white/95 shadow-[0_1px_0_rgba(0,0,0,0.04)] backdrop-blur;
+  }
+
+  .logo-link {
+    @apply inline-flex text-suits-gray hover:text-suits-blue;
+  }
+
+  .main-nav {
+    @apply items-center gap-2;
+  }
+
+  .main-nav a {
+    @apply relative px-4 py-3 text-[24px] leading-none text-suits-gray;
+  }
+
+  .main-nav a::after {
+    @apply absolute bottom-1 left-4 h-0.5 w-[calc(100%-2rem)] bg-transparent transition-colors duration-150 content-[''];
+  }
+
+  .main-nav a:hover::after,
+  .main-nav a.active::after {
+    @apply bg-suits-blue;
+  }
+
+  .icon-button {
+    @apply inline-flex h-12 w-12 items-center justify-center text-suits-gray transition-colors hover:text-suits-blue;
+  }
+
+  .mobile-menu {
+    @apply fixed inset-x-0 z-30 flex flex-col items-center justify-center gap-7 bg-white text-center;
+    top: 72px;
+    height: calc(100svh - 72px);
+  }
+
+  .mobile-menu a {
+    @apply relative text-[28px] leading-none text-suits-gray/65;
+  }
+
+  .mobile-menu a:hover {
+    @apply text-suits-gray;
+  }
+
+  .page-shell {
+    @apply min-h-[calc(100svh-168px)] pt-24 sm:pt-32;
+  }
+
+  .section {
+    @apply mx-auto w-full max-w-7xl px-5 pb-16 sm:px-8;
+  }
+
+  .section-title {
+    @apply mb-8 break-words text-[28px] font-bold uppercase leading-none text-suits-gray sm:text-[38px] lg:text-[48px];
+  }
+
+  .section-title::before {
+    content: '//';
+  }
+
+  .content {
+    @apply text-[20px] leading-relaxed;
+  }
+
+  .content h2 {
+    @apply mb-5 mt-0 text-[24px] font-bold leading-tight text-suits-gray sm:text-[40px];
+  }
+
+  .content h3 {
+    @apply mb-3 mt-8 text-[22px] font-bold leading-tight text-suits-gray sm:text-[26px];
+  }
+
+  .content h4 {
+    @apply mb-2 mt-6 text-[20px] font-bold leading-tight text-suits-gray sm:text-[24px];
+  }
+
+  .content h5 {
+    @apply mb-2 mt-5 text-[20px] font-bold leading-tight text-suits-gray sm:text-[22px];
+  }
+
+  .content p {
+    @apply mb-6;
+  }
+
+  .content ul {
+    @apply mb-6 list-none pl-6;
+  }
+
+  .content li {
+    @apply relative mb-1;
+  }
+
+  .content li::before {
+    @apply absolute -left-5 font-bold text-suits-blue content-['•'];
+  }
+
+  .site-footer {
+    @apply bg-suits-charcoal text-[#b1b1b1];
+  }
+
+  .site-footer a {
+    @apply text-[#b1b1b1] hover:text-white;
+  }
+
+  .static-map {
+    @apply relative block overflow-hidden bg-[#edf1f3] text-suits-gray;
+  }
+
+  .static-map img {
+    @apply aspect-[32/9] min-h-56 w-full object-cover sm:min-h-0;
+  }
+
+  .static-map-missing {
+    @apply flex min-h-56 w-full items-center justify-center border-2 border-dashed border-suits-blue bg-[#f4f6f7] p-6 text-center text-[20px] font-bold text-suits-gray sm:aspect-[32/9] sm:min-h-0;
+  }
+
+  .reference-link {
+    @apply flex h-full flex-col items-center text-center text-suits-gray transition-transform duration-200 ease-out hover:-translate-y-1 hover:text-suits-blue;
+  }
+
+  .reference-link h2 {
+    @apply mb-4 min-h-[3.5rem] px-4 text-[22px] font-bold leading-tight sm:text-[26px];
+  }
+}
