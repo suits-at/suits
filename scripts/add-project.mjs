@@ -27,7 +27,7 @@ const slug = arg('slug') ?? (title ? slugify(title) : undefined);
 
 if (!url || !title || !slug) {
   console.error(
-    'Usage: npm run add-project -- --url https://example.com --title "Project Title" [--date 2026] [--slug project-title]',
+    'Usage: pnpm add-project -- --url https://example.com --title "Project Title" [--date 2026] [--slug project-title]',
   );
   process.exit(1);
 }

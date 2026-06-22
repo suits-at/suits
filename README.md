@@ -5,9 +5,9 @@ Astro-powered portfolio website for [suits.at](https://www.suits.at/).
 ## Commands
 
 ```bash
-npm run dev
-npm run build
-npm run preview
+pnpm dev
+pnpm build
+pnpm preview
 ```
 
 ## Content
@@ -20,11 +20,11 @@ npm run preview
 ## Adding a Project
 
 ```bash
-npm run add-project -- --url https://example.com --title "Project Title" --date 2026
+pnpm add-project -- --url https://example.com --title "Project Title" --date 2026
 ```
 
 The script captures a screenshot, creates a thumbnail, stores both under `public/images/projects`, and inserts the project into `src/data/projects.ts`.
 
 ## Map
 
-Set `PUBLIC_GOOGLE_MAPS_API_KEY` on Netlify to render Google Static Maps. Without it, the contact page shows a visible missing-key warning.
+Set `PUBLIC_GOOGLE_MAPS_API_KEY` or the legacy `MAPS_KEY` on Netlify to render Google Static Maps. Without one of them, the contact page shows a visible missing-key warning.
