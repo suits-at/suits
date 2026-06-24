@@ -1,5 +1,11 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import {
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from 'node:fs';
 import { join } from 'node:path';
 import process from 'node:process';
 import sharp from 'sharp';
@@ -36,6 +42,7 @@ const outputDir = join(process.cwd(), 'public/images/projects');
 mkdirSync(outputDir, { recursive: true });
 
 const screenshotFile = join(outputDir, `${slug}-screenshot.webp`);
+const screenshotCaptureFile = join(outputDir, `${slug}-screenshot.png`);
 const thumbnailFile = join(outputDir, `${slug}-thumbnail.webp`);
 
 const browser = await chromium.launch();
@@ -45,12 +52,14 @@ const page = await browser.newPage({
 });
 await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 });
 await page.screenshot({
-  path: screenshotFile,
+  path: screenshotCaptureFile,
   fullPage: true,
-  type: 'webp',
-  quality: 82,
+  type: 'png',
 });
 await browser.close();
+
+await sharp(screenshotCaptureFile).webp({ quality: 82 }).toFile(screenshotFile);
+rmSync(screenshotCaptureFile, { force: true });
 
 await sharp(screenshotFile)
   .resize(600, 600, { fit: 'cover', position: 'top' })
