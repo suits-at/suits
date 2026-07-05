@@ -9,6 +9,14 @@ export type Project = {
 
 export const projects = [
   {
+    slug: 'medical-golf-performance',
+    title: 'Medical Golf Performance',
+    url: 'https://medicalgolfperformance.at/',
+    date: '2026',
+    screenshot: '/images/projects/medical-golf-performance-screenshot.webp',
+    thumbnail: '/images/projects/medical-golf-performance-thumbnail.webp',
+  },
+  {
     slug: 'isopox',
     title: 'Isopox KG',
     url: 'https://www.isopox.at/',

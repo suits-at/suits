@@ -26,6 +26,41 @@ function slugify(value) {
     .replace(/^-|-$/g, '');
 }
 
+async function triggerLazyLoadedContent(page) {
+  await page.evaluate(async () => {
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    const step = Math.max(window.innerHeight * 0.8, 400);
+    const maxScroll = () =>
+      Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+      ) - window.innerHeight;
+
+    for (let position = 0; position < maxScroll(); position += step) {
+      window.scrollTo(0, position);
+      await delay(250);
+    }
+
+    window.scrollTo(0, maxScroll());
+    await delay(500);
+    window.scrollTo(0, 0);
+    await delay(500);
+  });
+
+  await page
+    .waitForLoadState('networkidle', { timeout: 30000 })
+    .catch(() => {});
+  await page.evaluate(async () => {
+    await Promise.all(
+      [...document.images]
+        .filter((image) => !image.complete)
+        .map((image) =>
+          image.decode ? image.decode().catch(() => {}) : Promise.resolve(),
+        ),
+    );
+  });
+}
+
 const url = arg('url');
 const title = arg('title');
 const date = arg('date') ?? String(new Date().getFullYear());
@@ -51,6 +86,7 @@ const page = await browser.newPage({
   deviceScaleFactor: 1,
 });
 await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 });
+await triggerLazyLoadedContent(page);
 await page.screenshot({
   path: screenshotCaptureFile,
   fullPage: true,
