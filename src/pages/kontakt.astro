@@ -1,0 +1,74 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Icon from '@/components/Icon.astro';
+import { contact } from '@/data/profile';
+import { renderMarkdown } from '@/lib/markdown';
+import contactContent from '@/content/pages/contact.md?raw';
+
+const contactItems = [
+  { icon: 'User', html: renderMarkdown(contact.textMe) },
+  { icon: 'MapPin', html: renderMarkdown(contact.textLocation) },
+  { icon: 'Mail', html: renderMarkdown(contact.textMail) },
+] as const;
+const address = 'Schüttaustraße 60, 1220 Wien';
+const coordinates = '48.226668,16.4225076';
+const mapsUrl =
+  'https://www.google.com/maps/search/?api=1&query=Sch%C3%BCttaustra%C3%9Fe%2060%2C%201220%20Wien';
+const mapsKey =
+  import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY ?? import.meta.env.MAPS_KEY;
+const markerIcon = encodeURIComponent(
+  'https://www.suits.at/images/uploads/suits_marker.png',
+);
+const staticMapUrl = mapsKey
+  ? `https://maps.googleapis.com/maps/api/staticmap?center=${encodeURIComponent(coordinates)}&zoom=14&size=640x180&scale=2&maptype=roadmap&markers=icon:${markerIcon}%7C${encodeURIComponent(coordinates)}&key=${mapsKey}`
+  : undefined;
+---
+
+<BaseLayout title={contact.title}>
+  <section class="section">
+    <h1 class="section-title">{contact.title}</h1>
+    <div
+      class="content mb-10 max-w-4xl"
+      set:html={renderMarkdown(contactContent)}
+    />
+    <div class="mb-10 grid gap-8 sm:grid-cols-3">
+      {
+        contactItems.map((item) => (
+          <div class="text-center">
+            <Icon
+              name={item.icon}
+              size={48}
+              stroke-width={1.5}
+              class="mx-auto mb-4 text-suits-gray"
+            />
+            <div class="content" set:html={item.html} />
+          </div>
+        ))
+      }
+    </div>
+    <a
+      href={mapsUrl}
+      target="_blank"
+      rel="noopener"
+      class="static-map"
+      aria-label={`Google Maps öffnen: ${address}`}
+    >
+      {
+        staticMapUrl ? (
+          <img
+            src={staticMapUrl}
+            alt={`Karte: ${address}`}
+            width="1280"
+            height="360"
+            loading="lazy"
+            decoding="async"
+          />
+        ) : (
+          <span class="static-map-missing">
+            Google Maps Static API key fehlt
+          </span>
+        )
+      }
+    </a>
+  </section>
+</BaseLayout>

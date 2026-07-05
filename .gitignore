@@ -58,6 +58,7 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.*
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -68,7 +69,10 @@ typings/
 # nuxt.js build output
 .nuxt
 
-# Nuxt generate
+# Astro generated files
+.astro
+
+# Static build output
 dist
 
 # vuepress build output
@@ -91,3 +95,6 @@ sw.*
 
 # npmrc
 .npmrc
+
+# Local Netlify folder
+.netlify
