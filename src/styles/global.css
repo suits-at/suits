@@ -38,7 +38,8 @@
   }
 
   body {
-    @apply min-h-screen;
+    @apply flex min-h-screen flex-col;
+    min-height: 100svh;
   }
 
   ::selection {
@@ -112,7 +113,7 @@
   }
 
   .page-shell {
-    @apply min-h-[calc(100svh-168px)] pt-24 sm:pt-32;
+    @apply flex-1 pt-24 sm:pt-32;
   }
 
   .section {
