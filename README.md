@@ -27,7 +27,9 @@ pnpm preview
 
 `pnpm build` runs `astro check` before building the static site.
 
-TypeScript stays on the latest 6.x release because `@astrojs/check` does not yet support TypeScript 7.
+TypeScript 7 is installed as `@typescript/native` and provides `pnpm exec tsc`.
+The `typescript` dependency aliases Microsoft's `@typescript/typescript6` compatibility
+package because `astro check` and `scripts/add-project.mjs` still require the TypeScript 6 API.
 
 ## Project Structure
 
