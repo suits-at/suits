@@ -29,7 +29,9 @@ pnpm preview
 
 TypeScript 7 is installed as `@typescript/native` and provides `pnpm exec tsc`.
 The `typescript` dependency aliases Microsoft's `@typescript/typescript6` compatibility
-package because `astro check` and `scripts/add-project.mjs` still require the TypeScript 6 API.
+package because `astro check` still requires the TypeScript 6 API.
+The add-project script uses TypeScript 7's experimental native API; its version is
+pinned until that API is stable.
 
 ## Project Structure
 

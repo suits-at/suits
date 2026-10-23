@@ -10,7 +10,8 @@ import { join } from 'node:path';
 import process from 'node:process';
 import sharp from 'sharp';
 import { chromium } from 'playwright';
-import ts from 'typescript';
+import { API } from '@typescript/native/unstable/sync';
+import * as ts from '@typescript/native/unstable/ast';
 
 function arg(name) {
   const index = process.argv.indexOf(`--${name}`);
@@ -113,13 +114,6 @@ const project = {
 
 const dataPath = join(process.cwd(), 'src/data/projects.ts');
 const data = readFileSync(dataPath, 'utf8');
-const source = ts.createSourceFile(
-  dataPath,
-  data,
-  ts.ScriptTarget.Latest,
-  true,
-  ts.ScriptKind.TS,
-);
 
 if (
   data.includes(`slug: '${slug}'`) ||
@@ -130,10 +124,12 @@ if (
   process.exit(1);
 }
 
-function findProjectsArray() {
+function findProjectsInsertion() {
   let result;
   function unwrap(expression) {
-    return ts.isSatisfiesExpression(expression) || ts.isAsExpression(expression)
+    return ts.isSatisfiesExpression(expression) ||
+      ts.isAsExpression(expression) ||
+      ts.isParenthesizedExpression(expression)
       ? unwrap(expression.expression)
       : expression;
   }
@@ -145,16 +141,34 @@ function findProjectsArray() {
       node.initializer
     ) {
       const initializer = unwrap(node.initializer);
-      if (ts.isArrayLiteralExpression(initializer)) result = initializer;
+      if (ts.isArrayLiteralExpression(initializer)) {
+        result = initializer.getStart() + 1;
+      }
     }
-    ts.forEachChild(node, visit);
+    node.forEachChild(visit);
   }
-  visit(source);
-  return result;
+  // TypeScript 7's native parser is exposed through its experimental snapshot API.
+  const api = new API({ cwd: process.cwd() });
+  try {
+    const snapshot = api.updateSnapshot({ openFiles: [dataPath] });
+    try {
+      const program = snapshot.getDefaultProjectForFile(dataPath)?.program;
+      const source = program?.getSourceFile(dataPath);
+      if (!source || program.getSyntacticDiagnostics(dataPath).length) {
+        throw new Error('Could not parse src/data/projects.ts');
+      }
+      visit(source);
+      return result;
+    } finally {
+      snapshot.dispose();
+    }
+  } finally {
+    api.close();
+  }
 }
 
-const projectsArray = findProjectsArray();
-if (!projectsArray) {
+const insertAt = findProjectsInsertion();
+if (insertAt === undefined) {
   console.error('Could not find projects array in src/data/projects.ts');
   process.exit(1);
 }
@@ -165,7 +179,6 @@ if (!existsSync(screenshotFile) || !existsSync(thumbnailFile)) {
 }
 
 const insert = `${JSON.stringify(project, null, 2)},`;
-const insertAt = projectsArray.elements.pos + 1;
 writeFileSync(
   dataPath,
   `${data.slice(0, insertAt)}\n  ${insert.replaceAll('\n', '\n  ')}${data.slice(insertAt)}`,
