@@ -1,4 +1,4 @@
-@import 'tailwindcss/index.css';
+@import 'tailwindcss/index.css' source('../');
 
 @theme {
   --font-sans:

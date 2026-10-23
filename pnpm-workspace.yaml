@@ -1,5 +1,7 @@
 allowBuilds:
   esbuild: true
   sharp: true
+minimumReleaseAgeExclude:
+  - '@lucide/astro@1.49.0'
 overrides:
-  yaml: ^2.8.3
+  yaml: ^2.9.1

@@ -5,7 +5,7 @@ Astro-powered portfolio website for [suits.at](https://www.suits.at/).
 ## Requirements
 
 - Node.js 24 (`.node-version` and `.nvmrc`)
-- pnpm 11
+- pnpm 12
 
 ## Setup
 
@@ -26,6 +26,8 @@ pnpm preview
 ```
 
 `pnpm build` runs `astro check` before building the static site.
+
+TypeScript stays on the latest 6.x release because `@astrojs/check` does not yet support TypeScript 7.
 
 ## Project Structure
 
